@@ -24,7 +24,6 @@ file content format:
 - r : Algorithm id (default:1)
 	
 	- 4:static algorithm FTM
-	
 	- 9:dynamic algorithm DFTM
 
 - o : Output level (default:0)
@@ -39,9 +38,9 @@ file content format:
 
 - g : Index id (default:1)
 
-- - 1: eL table
-- - 2: interval tree
-- - 5: IC tree
+	- 1: eL table
+	- 2: interval tree
+	- 5: IC tree
 
 - l : Limit the start time and end time of input data (default:doesn't limit) format:-l:0,500
 
