@@ -24,7 +24,7 @@ file content format:
 - r : Algorithm id (default:1)
 	
 	- 4:static algorithm FTM
-	- 9:dynamic algorithm DFTM
+	- 9:incremental algorithm DFTM
 
 - o : Output level (default:0)
 	
@@ -43,11 +43,11 @@ file content format:
 
 - l : Limit the start time and end time of input data (default:doesn't limit) format:-l:0,500
 
-e.g.: if the interval of input temporal graph is [1,100], -l:1,50 means you only use the interval [1,50] of temporal graph when testing the algorithm  (used in dynamic algorithm)
+e.g.: if the interval of input temporal graph is [1,100], -l:1,50 means you only use the interval [1,50] of temporal graph when testing the algorithm  (used in incremental algorithm)
 
 - n : Limit the end time of input data when snapshot increasing (use - l at the same time) (default:doesn't limit) 
 
-e.g.: -l:0,500 -n:1600 means that the interval of temporal graph is [0,500] before snapshots increase, and that the interval of temporal graph is [0,1600] after snapshots increase (used in dynamic algorithm)
+e.g.: -l:0,500 -n:1600 means that the interval of temporal graph is [0,500] before snapshots increase, and that the interval of temporal graph is [0,1600] after snapshots increase (used in incremental algorithm)
 
 **Examples for static algorithm FTM**
 
@@ -59,7 +59,7 @@ e.g.: -l:0,500 -n:1600 means that the interval of temporal graph is [0,500] befo
 
   (use IC trees, output nodes of edges, labels, the number of motifs and edges, time, memory) 
 
-**Example for dynamic algorithm DFTM**
+**Example for incremental algorithm DFTM**
 
 3. FTNMotifs.exe -i:temporalgraph.txt -k:k10.txt -r:9 -g:1 -f:output.txt -o:0 -l:0,500 -n:1000    
 
