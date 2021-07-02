@@ -39,7 +39,6 @@ file content format:
 - g : Index id (default:1)
 
 	- 1: eL table
-	- 2: interval tree
 	- 5: IC tree
 
 - l : Limit the start time and end time of input data (default:doesn't limit) format:-l:0,500
@@ -50,7 +49,7 @@ e.g.: if the interval of input temporal graph is [1,100], -l:1,50 means you only
 
 e.g.: -l:0,500 -n:1600 means that the interval of temporal graph is [0,500] before snapshots increase, and that the interval of temporal graph is [0,1600] after snapshots increase (used in dynamic algorithm)
 
-**for static algorithm FTM**
+**Examples for static algorithm FTM**
 
 1. FTNMotifs.exe -i:temporalgraph.txt -k:k10.txt -r:4 -g:1 -f:output.txt -o:1  
 
@@ -60,7 +59,7 @@ e.g.: -l:0,500 -n:1600 means that the interval of temporal graph is [0,500] befo
 
   (use IC trees, output nodes of edges, labels, the number of motifs and edges, time, memory) 
 
-**for dynamic algorithm DFTM**
+**Example for dynamic algorithm DFTM**
 
 3. FTNMotifs.exe -i:temporalgraph.txt -k:k10.txt -r:9 -g:1 -f:output.txt -o:0 -l:0,500 -n:1000    
 
