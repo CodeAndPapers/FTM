@@ -49,6 +49,15 @@ e.g.: if the interval of input temporal graph is [1,100], -l:1,50 means you only
 
 e.g.: -l:0,500 -n:1600 means that the interval of temporal graph is [0,500] before snapshots increase, and that the interval of temporal graph is [0,1600] after snapshots increase (used in incremental algorithm)
 
+- e : File name of fixed labels of motif edges (default: do not fix labels)
+
+```
+ file content format (means motifs with label types set = {1,2}, all edges have label type in {1,2}, one line for one label type):
+     1
+     2				
+```
+
+
 **Examples for static algorithm FTM**
 
 1. FTNMotifs.exe -i:temporalgraph.txt -k:k10.txt -r:4 -g:1 -f:output.txt -o:1  

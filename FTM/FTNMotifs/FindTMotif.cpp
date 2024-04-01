@@ -1,0 +1,75 @@
+#include "FindTMotif.h"
+#include "TGraphUEL.h"
+#include "TGraphUICTree.h"
+#include "stdafx.h"
+
+#pragma region parameters initialization
+int FindTMotif::k = DEFAULT_K;
+int TGraph::maxMotifNum = 0;
+long long FindTMotif::motifNumber = 0;
+int FindTMotif::output = 0;
+bool FindTMotif::isEdgeTypeFixed = false;
+char FindTMotif::outputSrc[FILE_NAME_LENGTH] = OUTPUT_FILE;
+#pragma endregion 
+
+#pragma region static algorithm
+/*  @parameter:
+	graph: input temporal graph
+	result: output result
+*/
+void FindTMotif::FTM(TGraph*& graph, vec(TMotif*)*& result,
+	i2bHMap& fixLabel/*,int methodId*/ ) {
+	int startT = graph->getStartT(), endT = graph->getEndT();
+	graph->findTMotifs(k,  result, fixLabel, isEdgeTypeFixed,
+		motifNumber, startT , endT);
+}
+#pragma endregion
+
+#pragma region incremental algorithm
+/*
+	@parameter:
+	graph: input temporal graph (updated)
+	result: original result TF^o
+	newResult: new result TF
+	oriEndT: original ending timestamp of temporal graph
+*/
+void FindTMotif::DFTM(TGraph*& graph,
+	vec(TMotif*)*& result, vec(TMotif*)*& newResult, 
+	int oriEndT, i2bHMap& fixLabel/*, int methodId*/) {
+	int startT = graph->getStartT();
+	int endT = graph->getEndT();
+	TGraph::maxMotifNum = 0;
+	int lastRow = oriEndT - k + 1;
+	#pragma region copy from original result
+	for (int i = startT; i <= lastRow; i++) {
+		int first = i + FindTMotif::k - 1;
+		int tempPos = resultPos(i, first, startT, oriEndT, FindTMotif::k) - 1;
+		int nowPos = resultPos(i, first, startT, endT, FindTMotif::k) - 1;
+		for (int j = first; j <= oriEndT; j++) {
+			tempPos++;
+			nowPos++;
+			int resultSize = (int)result[tempPos].size();
+			for (int s = 0; s < resultSize; s++) {
+				newResult[nowPos].emplace_back(result[tempPos][s]);
+			}
+			result[tempPos].clear();
+			if(j < oriEndT)
+				FindTMotif::motifNumber += resultSize;
+			else if (resultSize > TGraph::maxMotifNum)
+				TGraph::maxMotifNum = resultSize;
+		}
+	}
+	delete[] result;
+	#pragma endregion
+	if (oriEndT == endT)return;
+	#pragma region update result
+		//row number<=T-k+1
+		graph->findTMotifsDynamic(k, newResult,
+			oriEndT, fixLabel, isEdgeTypeFixed, FindTMotif::motifNumber);
+		//row number>T-k+1  similar to FTM
+		graph->findTMotifs(k, newResult,
+			fixLabel, isEdgeTypeFixed, FindTMotif::motifNumber,
+			oriEndT - k + 2, endT);
+	#pragma endregion
+}
+#pragma endregion 
