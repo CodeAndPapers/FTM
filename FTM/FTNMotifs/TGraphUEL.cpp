@@ -395,6 +395,7 @@ void TGraphUEL::computeRESForDFTM(int intvB, int intvE,
 		//minEndTime[motifPos] = minEndT + intvE;
 		//}
 		edgeToMotifId->insert_or_assign(minEndTEdge, motifPos);
+		//edgeToMotifId[minEndTEdge] = motifPos;
 		delete tempMotif;
 	}
 }

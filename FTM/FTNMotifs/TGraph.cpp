@@ -199,7 +199,7 @@ void TGraph::genMotifInOneIntv(veciter(int)& iterStart, veciter(int)& iterEnd,
 	vec(int)& combineCCPos, int& realMotifNum,
 	i2iHMap& root2Comp, vec(CComponents*)& tempComponents,
 	vec(int)& saveCCPos, int motifStartT, int motifEndT,
-	vec(TMotif*)*& result, int k, long long& motifNumber) {
+	vec(TMotif*)*& result, int k, long long& motifNumber, int TFchoice) {
 	clock_t begin;
 	begin = clock();
 
@@ -226,7 +226,7 @@ void TGraph::genMotifInOneIntv(veciter(int)& iterStart, veciter(int)& iterEnd,
 	begin = clock();
 	generateExpTM(saveCCPos, tempComponents,
 		result, k, motifStartT,
-		motifEndT, motifNumber);
+		motifEndT, motifNumber, TFchoice);
 	Test::gne += clock() - begin;
 }
 
@@ -235,7 +235,7 @@ void TGraph::genMotifInOneIntvDynamic(veciter(int)& iterStart, veciter(int)& ite
 	vec(int)& combineCCPos, int& realMotifNum,
 	i2iHMap& root2Comp, vec(CComponents*)& tempComponents,
 	vec(int)& saveCCPos, int motifStartT, int motifEndT,
-	vec(TMotif*)*& result, int k, long long& motifNumber) {
+	vec(TMotif*)*& result, int k, long long& motifNumber, int TFchoice) {
 	clock_t begin;
 	begin = clock();
 
@@ -262,7 +262,7 @@ void TGraph::genMotifInOneIntvDynamic(veciter(int)& iterStart, veciter(int)& ite
 	begin = clock();
 	generateExpTMDynamic(saveCCPos, tempComponents,
 		result, k, motifStartT,
-		motifEndT, motifNumber);
+		motifEndT, motifNumber, TFchoice);
 	Test::gne += clock() - begin;
 }
 
@@ -447,7 +447,7 @@ void TGraph::updateNewEdgeInfo(
 /*DFTM (row number<=T-k+1)*/
 void TGraph::findTMotifsDynamic(int k,
 	vec(TMotif*)*& newResult, int oriEndT,
-	i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber) {
+	i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber, int TFchoice) {
 #pragma region intialization
 	i2iHMap vertex2Pos;//map the vertex's id to the position in disjoint set
 	/*map the root in disjoint set to the position of its corresponding
@@ -486,7 +486,12 @@ void TGraph::findTMotifsDynamic(int k,
 		selectedNum = 0;
 		Te = Ts + k - 1;
 		intvE = oriEndT;
-		pos = resultPos(Ts, intvE, startT, endT, k);
+		if (TFchoice == 2) {
+			pos = ((Ts - startT) << 1) + 1;
+		}
+		else {
+			pos = resultPos(Ts, intvE, startT, endT, k);
+		}
 		computeRESForDFTM(Ts, intvE,
 			edgeSetsR, selectedNum,
 			fixLabel, isEdgeTypeFixed, k,
@@ -514,7 +519,7 @@ void TGraph::findTMotifsDynamic(int k,
 				vertex2Pos, disjointSet, vertexNum,
 				combineMotifPos, realMotifNum, root2Comp, tempComponents,
 				saveMotifPos, Ts, edgeEndT,
-				newResult, k, motifNumber);
+				newResult, k, motifNumber, TFchoice);
 			edgeSetsR[tempT].clear();
 		}
 
@@ -544,7 +549,7 @@ void TGraph::findTMotifsDynamic(int k,
 /*FTM*/
 void TGraph::findTMotifs(int k, vec(TMotif*)*& result,
 	i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber,
-	int choiceStartT, int choiceEndT) {
+	int choiceStartT, int choiceEndT, int TFchoice) {
 #pragma region initialize
 	int lastTime = choiceEndT - k + 1;//last start time 
 	i2iHMap vertex2Pos;//map the vertex's id to the position in disjoint set
@@ -553,7 +558,7 @@ void TGraph::findTMotifs(int k, vec(TMotif*)*& result,
 	i2iHMap root2Comp;
 
 	vec(CComponents*) tempComponents;//temporary component list CC
-	//int lineNum = lastTime - choiceStartT + 1;
+	int lineNum = lastTime - choiceStartT + 1;
 	//int setsRNum = (lineNum * (lineNum + 1)) >> 1;
 	vec(int)* edgeSetsR = DBG_NEW vec(int)[maxIntervalLength];// R edge sets
 	DisjointSet* disjointSet;//disjoint set
@@ -617,7 +622,7 @@ void TGraph::findTMotifs(int k, vec(TMotif*)*& result,
 				vertex2Pos, disjointSet, vertexNum,
 				combineMotifPos, realMotifNum, root2Comp, tempComponents,
 				saveMotifPos, Ts, edgeEndT,
-				result, k, motifNumber);
+				result, k, motifNumber, TFchoice);
 			edgeSetsR[tempT].clear();
 		}
 
@@ -645,8 +650,16 @@ void TGraph::findTMotifs(int k, vec(TMotif*)*& result,
 void TGraph::generateExpTM(vec(int)&saveCCPos,
 	vec(CComponents*)& tempComponents,
 	vec(TMotif*)*& result, int k, int motifStartT, int motifEndT,
-	long long& motifNumber) {
-	int savePos = resultPos(motifStartT, motifEndT, startT, endT, k), tempSavePos;
+	long long& motifNumber, int TFchoice) {
+	int savePos, tempSavePos;
+	if (TFchoice == 2) {
+		if (motifEndT != endT) savePos = (motifStartT - startT) << 1;
+		else savePos = ((motifStartT - startT) << 1) + 1;
+	}
+	else {
+		savePos = resultPos(motifStartT, motifEndT, startT, endT, k);
+	}
+	
 	veciter(int) saveMotifEnd = saveCCPos.end();
 	CComponents* tempCC;
 	veciter(SaveCCInfo) saveCCInfoEnd;
@@ -670,12 +683,28 @@ void TGraph::generateExpTM(vec(int)&saveCCPos,
 		for (auto saveInfoIter = saveCCInfoPtr->begin();
 			saveInfoIter != saveCCInfoEnd; ++saveInfoIter) {
 			//reuse edges from original motifs
-			tempSavePos = resultPos(motifStartT, saveInfoIter->saveEndTime, startT, endT, k);
-			linkMotif = result[tempSavePos][saveInfoIter->savePos];
-			saveCCInfoP = motif->linkToMotifs(*saveInfoIter, linkMotif);
-			if (saveInfoIter->saveEndTime == endT) {
-				saveinfo.saveCCInfoPos = saveCCInfoP;
-				linkMotif->tempLinkToMotifs(saveinfo);
+			if (TFchoice == 2) {
+				if (saveInfoIter->saveEndTime == endT) {
+					tempSavePos = ((motifStartT - startT) << 1) + 1;
+					linkMotif = result[tempSavePos][saveInfoIter->savePos];
+					saveCCInfoP = motif->linkToMotifs(*saveInfoIter, linkMotif);
+					saveinfo.saveCCInfoPos = saveCCInfoP;
+					linkMotif->tempLinkToMotifs(saveinfo);
+				}
+				else {
+					tempSavePos = (motifStartT - startT) << 1;
+					linkMotif = result[tempSavePos][saveInfoIter->savePos];
+					saveCCInfoP = motif->linkToMotifs(*saveInfoIter, linkMotif);
+				}
+			}
+			else {
+				tempSavePos = resultPos(motifStartT, saveInfoIter->saveEndTime, startT, endT, k);
+				linkMotif = result[tempSavePos][saveInfoIter->savePos];
+				saveCCInfoP = motif->linkToMotifs(*saveInfoIter, linkMotif);
+				if (saveInfoIter->saveEndTime == endT) {
+					saveinfo.saveCCInfoPos = saveCCInfoP;
+					linkMotif->tempLinkToMotifs(saveinfo);
+				}
 			}
 		}
 
@@ -692,8 +721,15 @@ void TGraph::generateExpTM(vec(int)&saveCCPos,
 void TGraph::generateExpTMDynamic(vec(int)&saveCCPos,
 	vec(CComponents*)& tempComponents,
 	vec(TMotif*)*& result, int k, int motifStartT, int motifEndT,
-	long long& motifNumber) {
-	int savePos = resultPos(motifStartT, motifEndT, startT, endT, k), tempSavePos;
+	long long& motifNumber, int TFchoice) {
+	int savePos, tempSavePos;
+	if (TFchoice == 2) {
+		if (motifEndT != endT) savePos = (motifStartT - startT) << 1;
+		else savePos = ((motifStartT - startT) << 1) + 1;
+	}
+	else {
+		savePos = resultPos(motifStartT, motifEndT, startT, endT, k);
+	}
 	veciter(int) saveMotifEnd = saveCCPos.end();
 	CComponents* tempCC;
 	veciter(SaveCCInfo) saveCCInfoEnd;
@@ -721,7 +757,10 @@ void TGraph::generateExpTMDynamic(vec(int)&saveCCPos,
 			if (checkMotifId != -1) {
 				SaveCCInfo& saveCCInfo = motifSaveInfo[checkMotifId];
 				if (saveCCInfo.saveEndTime != -1) {//need to update the pointer
-					resultP = resultPos(motifStartT, saveCCInfo.saveEndTime, startT, endT, k);
+					if(TFchoice == 2)
+						resultP = (motifStartT - startT) << 1;
+					else
+						resultP = resultPos(motifStartT, saveCCInfo.saveEndTime, startT, endT, k);
 					linkMotif = result[resultP][saveCCInfo.savePos];
 					saveCCInfoPtr = linkMotif->getOtherEdge();
 					(*saveCCInfoPtr)[saveCCInfo.saveCCInfoPos] = SaveCCInfo(result[savePos].size(), motifEndT);
@@ -737,12 +776,28 @@ void TGraph::generateExpTMDynamic(vec(int)&saveCCPos,
 		for (auto saveInfoIter = saveCCInfoPtr->begin();
 			saveInfoIter != saveCCInfoEnd; ++saveInfoIter) {
 			//reuse edges from original motifs
-			tempSavePos = resultPos(motifStartT, saveInfoIter->saveEndTime, startT, endT, k);
-			linkMotif = result[tempSavePos][saveInfoIter->savePos];
-			saveCCInfoP = motif->linkToMotifs(*saveInfoIter, linkMotif);
-			if (saveInfoIter->saveEndTime == endT) {
-				saveinfo.saveCCInfoPos = saveCCInfoP;
-				linkMotif->tempLinkToMotifs(saveinfo);
+			if (TFchoice == 2) {
+				if (saveInfoIter->saveEndTime == endT) {
+					tempSavePos = ((motifStartT - startT) << 1) + 1;
+					linkMotif = result[tempSavePos][saveInfoIter->savePos];
+					saveCCInfoP = motif->linkToMotifs(*saveInfoIter, linkMotif);
+					saveinfo.saveCCInfoPos = saveCCInfoP;
+					linkMotif->tempLinkToMotifs(saveinfo);
+				}
+				else {
+					tempSavePos = (motifStartT - startT) << 1;
+					linkMotif = result[tempSavePos][saveInfoIter->savePos];
+					saveCCInfoP = motif->linkToMotifs(*saveInfoIter, linkMotif);
+				}
+			}
+			else {
+				tempSavePos = resultPos(motifStartT, saveInfoIter->saveEndTime, startT, endT, k);
+				linkMotif = result[tempSavePos][saveInfoIter->savePos];
+				saveCCInfoP = motif->linkToMotifs(*saveInfoIter, linkMotif);
+				if (saveInfoIter->saveEndTime == endT) {
+					saveinfo.saveCCInfoPos = saveCCInfoP;
+					linkMotif->tempLinkToMotifs(saveinfo);
+				}
 			}
 		}
 
@@ -772,7 +827,7 @@ void TGraph::generateExpTMDynamic(vec(int)&saveCCPos,
 //	}
 //}
 
-void TGraph::printMotif(vec(TMotif*)*& res, TMotif* motif, int k) {
+void TGraph::printMotif(vec(TMotif*)*& res, TMotif* motif, int k, int TFchoice) {
 	int motifEndT = motif->getEndT(), motifStartT = motif->getStartT();
 	//int counter = 0;
 	if (motifEndT != endT) {
@@ -802,7 +857,16 @@ void TGraph::printMotif(vec(TMotif*)*& res, TMotif* motif, int k) {
 					veciter(SaveCCInfo) otherListEnd = otherEdge->end();
 					for (auto iter = otherEdge->begin();
 						iter != otherListEnd; ++iter) {
-						int resultP = resultPos(motifStartT, iter->saveEndTime, startT, endT, k);
+						int resultP;
+						if (TFchoice == 2) {
+							if (iter->saveEndTime != endT) {
+								resultP = (motifStartT - startT) << 1;
+							}
+							else resultP = ((motifStartT - startT) << 1) + 1;
+						}
+						else {
+							resultP = resultPos(motifStartT, iter->saveEndTime, startT, endT, k);
+						}
 						queue.push(res[resultP][iter->savePos]);
 					}
 				}

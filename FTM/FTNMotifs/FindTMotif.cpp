@@ -8,6 +8,7 @@ int FindTMotif::k = DEFAULT_K;
 int TGraph::maxMotifNum = 0;
 long long FindTMotif::motifNumber = 0;
 int FindTMotif::output = 0;
+int FindTMotif::TFchoice = 0;
 bool FindTMotif::isEdgeTypeFixed = false;
 char FindTMotif::outputSrc[FILE_NAME_LENGTH] = OUTPUT_FILE;
 #pragma endregion 
@@ -21,7 +22,7 @@ void FindTMotif::FTM(TGraph*& graph, vec(TMotif*)*& result,
 	i2bHMap& fixLabel/*,int methodId*/ ) {
 	int startT = graph->getStartT(), endT = graph->getEndT();
 	graph->findTMotifs(k,  result, fixLabel, isEdgeTypeFixed,
-		motifNumber, startT , endT);
+		motifNumber, startT , endT, TFchoice);
 }
 #pragma endregion
 
@@ -38,25 +39,47 @@ void FindTMotif::DFTM(TGraph*& graph,
 	int oriEndT, i2bHMap& fixLabel/*, int methodId*/) {
 	int startT = graph->getStartT();
 	int endT = graph->getEndT();
+	int nTimestamp = graph->getNTimestamp();
+	int nEdge = graph->getNEdge();
 	TGraph::maxMotifNum = 0;
 	int lastRow = oriEndT - k + 1;
 	#pragma region copy from original result
 	for (int i = startT; i <= lastRow; i++) {
 		int first = i + FindTMotif::k - 1;
-		int tempPos = resultPos(i, first, startT, oriEndT, FindTMotif::k) - 1;
-		int nowPos = resultPos(i, first, startT, endT, FindTMotif::k) - 1;
-		for (int j = first; j <= oriEndT; j++) {
-			tempPos++;
-			nowPos++;
+		if (TFchoice == 2) {
+			int tempPos = (i - startT) << 1, nowPos = (i - startT) << 1;
 			int resultSize = (int)result[tempPos].size();
 			for (int s = 0; s < resultSize; s++) {
 				newResult[nowPos].emplace_back(result[tempPos][s]);
 			}
 			result[tempPos].clear();
-			if(j < oriEndT)
-				FindTMotif::motifNumber += resultSize;
-			else if (resultSize > TGraph::maxMotifNum)
+			FindTMotif::motifNumber += resultSize;
+
+			tempPos++;
+			nowPos++;//endT
+			resultSize = (int)result[tempPos].size();
+			for (int s = 0; s < resultSize; s++) {
+				newResult[nowPos].emplace_back(result[tempPos][s]);
+			}
+			if (resultSize > TGraph::maxMotifNum)
 				TGraph::maxMotifNum = resultSize;
+		}
+		else {
+			int tempPos = resultPos(i, first, startT, oriEndT, FindTMotif::k) - 1;
+			int nowPos = resultPos(i, first, startT, endT, FindTMotif::k) - 1;
+			for (int j = first; j <= oriEndT; j++) {
+				tempPos++;
+				nowPos++;
+				int resultSize = (int)result[tempPos].size();
+				for (int s = 0; s < resultSize; s++) {
+					newResult[nowPos].emplace_back(result[tempPos][s]);
+				}
+				result[tempPos].clear();
+				if (j < oriEndT)
+					FindTMotif::motifNumber += resultSize;
+				else if (resultSize > TGraph::maxMotifNum)
+					TGraph::maxMotifNum = resultSize;
+			}
 		}
 	}
 	delete[] result;
@@ -65,11 +88,11 @@ void FindTMotif::DFTM(TGraph*& graph,
 	#pragma region update result
 		//row number<=T-k+1
 		graph->findTMotifsDynamic(k, newResult,
-			oriEndT, fixLabel, isEdgeTypeFixed, FindTMotif::motifNumber);
+			oriEndT, fixLabel, isEdgeTypeFixed, FindTMotif::motifNumber, FindTMotif::TFchoice);
 		//row number>T-k+1  similar to FTM
 		graph->findTMotifs(k, newResult,
 			fixLabel, isEdgeTypeFixed, FindTMotif::motifNumber,
-			oriEndT - k + 2, endT);
+			oriEndT - k + 2, endT, FindTMotif::TFchoice);
 	#pragma endregion
 }
 #pragma endregion 

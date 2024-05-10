@@ -248,7 +248,7 @@ void TGraphUICTree::createStructure(vec(int)& u_arr, vec(int)& v_arr,
 /*FTM*/
 void TGraphUICTree::findTMotifs(int k, vec(TMotif*)*& result,
 	i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber,
-	int choiceStartT, int choiceEndT) {
+	int choiceStartT, int choiceEndT, int TFchoice) {
 #pragma region initialize
 	int lastTime = choiceEndT - k + 1;//last start time 
 	i2iHMap vertex2Pos;//map the vertex's id to the position in disjoint set
@@ -316,7 +316,7 @@ void TGraphUICTree::findTMotifs(int k, vec(TMotif*)*& result,
 				vertex2Pos, disjointSet, vertexNum,
 				combineMotifPos, realMotifNum, root2Comp, tempComponents,
 				saveMotifPos, Ts, edgeEndT,
-				result, k, motifNumber);
+				result, k, motifNumber, TFchoice);
 			edgeSetsR[tempT].clear();
 		}
 
@@ -467,6 +467,7 @@ void TGraphUICTree::computeRESForDFTM(int intvB, int intvE,
 		//minEndTime[motifPos] = minEndT + intvE;
 		//}
 		edgeToMotifId->insert_or_assign(minEndTEdge, motifPos);
+		//edgeToMotifId[minEndTEdge] = motifPos;
 		delete tempMotif;
 	}
 }

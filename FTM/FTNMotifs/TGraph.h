@@ -77,7 +77,7 @@ public:
 	#pragma endregion
 
 	/*print motif*/
-	void printMotif(vec(TMotif*)*& res, TMotif* motif, int k);
+	void printMotif(vec(TMotif*)*& res, TMotif* motif, int k, int TFchoice);
 	/*count vertex number of motif*/
 	//void checkVertex(TMotif* motif);
 
@@ -85,7 +85,7 @@ public:
 		/*FTM*/
 	void findTMotifs(int k, vec(TMotif*)*& result,
 		i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber,
-		int choiceStartT, int choiceEndT);
+		int choiceStartT, int choiceEndT, int TFchoice);
 
 	#pragma region FTM step 1
 		/*computeRES*/
@@ -102,14 +102,14 @@ public:
 			vec(int)& combineCCPos, int& realMotifNum,
 			i2iHMap& root2Comp, vec(CComponents*)& tempComponents,
 			vec(int)& saveCCPos, int motifStartT, int motifEndT,
-			vec(TMotif*)*& result, int k, long long& motifNumber);
+			vec(TMotif*)*& result, int k, long long& motifNumber, int TFchoice);
 		/*generate motifs in one interval for DFTM*/
 		void genMotifInOneIntvDynamic(veciter(int)& iterStart, veciter(int)& iterEnd,
 			i2iHMap& vertex2Pos, DisjointSet*& disjointSet, int& vertexNum,
 			vec(int)& combineCCPos, int& realMotifNum,
 			i2iHMap& root2Comp, vec(CComponents*)& tempComponents,
 			vec(int)& saveCCPos, int motifStartT, int motifEndT,
-			vec(TMotif*)*& result, int k, long long& motifNumber);
+			vec(TMotif*)*& result, int k, long long& motifNumber, int TFchoice);
 
 		#pragma region generateMaxTM
 		/*fetch new edges from one R edge set and insert into the disjoint set (maintain connectivity)*/
@@ -136,19 +136,19 @@ public:
 		void generateExpTM(vec(int)&saveCCPos,
 			vec(CComponents*)& tempComponents,
 			vec(TMotif*)*& result, int k, int motifStartT, int motifEndT,
-			long long& motifNumber);
+			long long& motifNumber, int TFchoice);
 
 		void generateExpTMDynamic(vec(int)&saveCCPos,
 			vec(CComponents*)& tempComponents,
 			vec(TMotif*)*& result, int k, int motifStartT, int motifEndT,
-			long long& motifNumber);
+			long long& motifNumber, int TFchoice);
 	#pragma endregion 
 
 	#pragma endregion
 
 	/*DFTM (row number<=T-k+1)*/
 		void findTMotifsDynamic(int k, vec(TMotif*)*& newResult, int oriEndT,
-			i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber);
+			i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber, int TFchoice);
 
 	/*computeRES for DFTM (row <= T-k+1)*/
 	virtual void computeRESForDFTM(int intvB, int intvE,

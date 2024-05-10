@@ -7,6 +7,8 @@
 #include"FindTMotif.h"
 #include"TMotif.h"
 
+#define LESSMEMFOREUR 1 //method to reduce memory for EURData
+
 //unordered_map<int, int> Test::hist, Test::vertexHist;
 clock_t Test::compr, Test::gm, Test::gne;
 SIZE_T Test::peakMemory = 0;
@@ -78,6 +80,9 @@ void releaseResultNotDelete(vec(TMotif*)*& result, int len);
 		format:-l:0,500 -n:1600 
 		 means that the interval of temporal graph is [0,500] before snapshots increase,
 		 and that the interval of temporal graph is [0,1600] after snapshots increase (used in dynamic algorithm)
+- m : Method to save the set TF (default:2)
+        1 : maintain the temporal motifs in intervals (the output are in the time order in one row of TI-Table; need O(T^2) space; we use this method for better outputs)
+		2 : maintain the temporal motifs in rows (the output are not in the time order in one row of TI-Table; does not need O(T^2) space) 
 e.g.:
 	for static algorithm FTM:
 		(use EL table, only output the number of motifs and edges, time, memory)
@@ -96,6 +101,7 @@ int main(int argc, char* argv[]) {
 	char kFile[FILE_NAME_LENGTH] = K_FILE;//file of frequent conditon k
 	FindTMotif::k = DEFAULT_K;//frequent condition
 	int choice = ALGORITHM_ID;//choose which algorithm to run
+	FindTMotif::TFchoice = 2;//choose which method to save the set TF
 	char fixedLabelFile[FILE_NAME_LENGTH]
 		= FIXEDLABEL_FILE;//file of fixed labels
 	int indexId = INDEXID;//index id
@@ -141,6 +147,9 @@ int main(int argc, char* argv[]) {
 					break;
 				case 'r'://Choose Algorithm Id
 					choice = STR2INT(argv[i] + 3);
+					break;
+				case 'm'://Choose saving method for the set TF
+					FindTMotif::TFchoice = STR2INT(argv[i] + 3);
 					break;
 				default://do nothing
 					break;
@@ -247,8 +256,12 @@ void runStaticAlgorithm(TGraph*& temporal_graph, unordered_map<int, bool>& fixLa
 	size_t size;
 	FindTMotif::motifNumber = 0;
 	int nTimestamps = temporal_graph->getNTimestamp();
-	resultLen = (nTimestamps - FindTMotif::k + 2)
-		*(nTimestamps - FindTMotif::k + 1) >> 1;
+	if (FindTMotif::TFchoice == 2) {
+		resultLen = (nTimestamps - FindTMotif::k + 1) << 1;
+	}
+	else {
+		resultLen = (nTimestamps - FindTMotif::k + 2)*(nTimestamps - FindTMotif::k + 1) >> 1;
+	}
 	lis = DBG_NEW vec(TMotif*)[resultLen];//final result
 	#pragma endregion
 	clock_t startTime, endTime;
@@ -271,22 +284,41 @@ void runStaticAlgorithm(TGraph*& temporal_graph, unordered_map<int, bool>& fixLa
 	FindTMotif::motifMaxNum = FindTMotif::motifSum = 0;
 	FindTMotif::motifMinNum = 0x7fffffff;
 	Test::maxIntvLen = 0, Test::sumIntvLen = 0;
-	for (int i = 0; i < resultLen; i++) {
-		size = lis[i].size();
-		if (size == 0) continue;
-		
-		if (FindTMotif::output >= 1) {
-			cout << MOTIF_NUM << size << endl;
-			iter = lis[i].begin();
-			motif = *iter;
-			cout << "startT: " << motif->getStartT()
-				<< "\tendT: " << motif->getEndT() << endl;
+	if (FindTMotif::TFchoice == 2) {
+		for (int i = 0; i < resultLen; i += 2) {
+			size = lis[i].size() + lis[i + 1].size();//one row 
+			if (size == 0) continue;
+
+			if (FindTMotif::output >= 1) {
+				cout << MOTIF_NUM << size << endl;
+				iter = lis[i].begin();
+				motif = *iter;
+				//cout << "startT: " << motif->getStartT()
+				//	<< "\tendT: " << motif->getEndT() << endl;
+			}
+
+			FindTMotif::print2(temporal_graph,
+				lis, i, false);
 		}
-		
-		FindTMotif::print(temporal_graph, 
-			lis, i, false);
-		
 	}
+	else {
+		for (int i = 0; i < resultLen; i++) {
+			size = lis[i].size();
+			if (size == 0) continue;
+
+			if (FindTMotif::output >= 1) {
+				cout << MOTIF_NUM << size << endl;
+				iter = lis[i].begin();
+				motif = *iter;
+				cout << "startT: " << motif->getStartT()
+					<< "\tendT: " << motif->getEndT() << endl;
+			}
+
+			FindTMotif::print(temporal_graph,
+				lis, i, false);
+		}
+	}
+	
 	cout << "motif max edges num: " << FindTMotif::motifMaxNum << " motif min edges num: " << FindTMotif::motifMinNum <<
 		"\tmotif avg edges num: " << FindTMotif::motifSum * 1.0 / FindTMotif::motifNumber << endl;
 	cout << "motif max intverval length: " << Test::maxIntvLen <<
@@ -310,9 +342,14 @@ void runIncrementalAlgorithm(TGraph*& temporal_graph, const char * src
 	clock_t startTime, endTime;
 	int nTimestamp = temporal_graph->getNTimestamp();
 	int listSize = nTimestamp - FindTMotif::k + 1;
-	int resultLen = (listSize + 1)*(listSize) >> 1,//original result size
-		newResultLen;//new result size
-		//,midResultLen//intermediate result size
+	int resultLen;
+	if (FindTMotif::TFchoice == 2) {
+		resultLen = listSize << 1;//original result size
+	}
+	else {
+		resultLen = (listSize + 1)*(listSize) >> 1;//original result size
+	}
+	int newResultLen;//new result size
 	vec(TMotif*)* result = DBG_NEW vec(TMotif*)[resultLen], //original result of general case
 		*newResult = NULL;//new result of general case
 		//,*midResult = NULL//intermediate result of general case
@@ -329,7 +366,13 @@ void runIncrementalAlgorithm(TGraph*& temporal_graph, const char * src
 	int allEdgeSize = 0, maxEdgeSize = 0;
 	int lastRow = endT - FindTMotif::k + 1;
 	for (int i = startT; i <= lastRow; i++) {
-		int tempPos = resultPos(i, graphEndT, startT, graphEndT, FindTMotif::k);
+		int tempPos;
+		if (FindTMotif::TFchoice == 2) {
+			tempPos = ((i - startT) << 1) + 1;
+		}
+		else {
+			tempPos = resultPos(i, graphEndT, startT, graphEndT, FindTMotif::k);
+		}
 		auto resultEnd = result[tempPos].end();
 		size = 0;
 		for (auto resultIter = result[tempPos].begin(); resultIter != resultEnd; ++resultIter) {
@@ -352,7 +395,12 @@ void runIncrementalAlgorithm(TGraph*& temporal_graph, const char * src
 	listSize = temporal_graph->getNTimestamp() - FindTMotif::k + 1;
 	endT = temporal_graph->getEndT();
 	/*size of new intermediate result after snapshots increasing*/
-	newResultLen = (listSize + 1)*listSize >> 1;
+	if (FindTMotif::TFchoice == 2) {
+		newResultLen = listSize << 1;
+	}
+	else {
+		newResultLen = (listSize + 1)*listSize >> 1;
+	}
 	newResult = DBG_NEW vec(TMotif*)[newResultLen];//new result
 	Test::peakMemory = 0;
 	cout << "before algorithm: "; Test::showMemoryUse();
@@ -367,20 +415,38 @@ void runIncrementalAlgorithm(TGraph*& temporal_graph, const char * src
 	cout << "inctime: " << endTime - startTime << "ms" << endl;
 	veciter(TMotif*) iter;
 	TMotif* motif;
-	for (int i = 0; i < newResultLen; i++) {
-		size = newResult[i].size();
-		if (size == 0) continue;
-		if (FindTMotif::output >= 1) {
-			cout << MOTIF_NUM << size << endl;
-			iter = newResult[i].begin();
-			motif = *iter;
-			cout << "startT: " << motif->getStartT()
-				<< "\tendT: " << motif->getEndT() << endl;
-		}	
+	if (FindTMotif::TFchoice == 2) {
+		for (int i = 0; i < newResultLen; i += 2) {
+			size = newResult[i].size() + newResult[i + 1].size();
+			if (size == 0) continue;
+			if (FindTMotif::output >= 1) {
+				cout << MOTIF_NUM << size << endl;
+				//iter = newResult[i].begin();
+				//motif = *iter;
+				//cout << "startT: " << motif->getStartT()
+				//	<< "\tendT: " << motif->getEndT() << endl;
+			}
 
-		FindTMotif::print(temporal_graph,
-			newResult, i, false);
-		
+			FindTMotif::print2(temporal_graph,
+				newResult, i, false);
+		}
+	}
+	else {
+		for (int i = 0; i < newResultLen; i++) {
+			size = newResult[i].size();
+			if (size == 0) continue;
+			if (FindTMotif::output >= 1) {
+				cout << MOTIF_NUM << size << endl;
+				iter = newResult[i].begin();
+				motif = *iter;
+				cout << "startT: " << motif->getStartT()
+					<< "\tendT: " << motif->getEndT() << endl;
+			}
+
+			FindTMotif::print(temporal_graph,
+				newResult, i, false);
+
+		}
 	}
 	cout << "motif max edges num: " << FindTMotif::motifMaxNum <<
 		"\tmotif avg edges num: " << FindTMotif::motifSum * 1.0 / FindTMotif::motifNumber << endl;

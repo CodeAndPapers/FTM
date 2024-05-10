@@ -48,7 +48,7 @@ public:
 
 	void findTMotifs(int k, vec(TMotif*)*& result,
 		i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber,
-		int choiceStartT, int choiceEndT);
+		int choiceStartT, int choiceEndT, int TFchoice);
 private:
 	/*
 	create the eL table and IC trees

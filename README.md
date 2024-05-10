@@ -56,7 +56,10 @@ e.g.: -l:0,500 -n:1600 means that the interval of temporal graph is [0,500] befo
      1
      2				
 ```
-
+- m : Method to save the set TF (default:2)
+	
+	- 1 : maintain the temporal motifs in intervals (the output are in the time order in one row of TI-Table; need O(T^2) space; we use this method for sorted outputs)
+	- 2 : maintain the temporal motifs in rows (the output are not in the time order in one row of TI-Table; does not need O(T^2) space) 
 
 **Examples for static algorithm FTM**
 
@@ -78,4 +81,5 @@ e.g.: -l:0,500 -n:1600 means that the interval of temporal graph is [0,500] befo
 ## Datasets
 - BJD<font size = 8>ATA</font>: A real-life dataset records road traffic conditions in Beijing. There are three traffic conditions (i.e. 2: congested, 1: slow, -1: fast), and are updated every 5 minutes. 
 - EURD<font size = 8>ATA</font>: A real-life dataset for a renewable European electric power system. Each edge represents a transmission line with only static properties, and each node represents a merge point of transmission lines with a dynamic property of the hourly energy demand. 
+- LAND<font size = 8>ATA</font>: A real-life dataset for real-life computer event dataset from the [Los Alamos National Laboratory enterprise network](https://csr.lanl.gov/data/2017/#citing). Each node represents a computer, and each edge represents the communication of two computers with a dynamic property of the average  number of bytes sent.
 - SYND<font size = 8>ATA</font>: Synthetic datasets produced by the synthetic data generator.
