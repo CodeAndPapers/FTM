@@ -2,7 +2,7 @@
 ## Files
 - Codes: FTM.zip
 - Examples: examples.zip
-- Datasets: BJDATA.zip EURDATA.zip EURDATA.z01 SYNDATA.zip LANDATA.zip
+- Datasets: BJDATA.zip EURDATA.zip EURDATA.z01 LANDATA.zip SYNDATA.zip
 
 ## Environment
 - IDE: VS2017
