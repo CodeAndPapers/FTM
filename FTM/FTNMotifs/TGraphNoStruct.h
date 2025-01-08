@@ -24,7 +24,7 @@ public:
 			delete[]eW[i];
 		}
 		delete[]eW; 
-		delete[]EMaxIntvl;
+		delete[]cE;
 	}
 
 #pragma region construct and update the temporal graph
@@ -47,34 +47,23 @@ public:
 
 	void findTMotifs(int k, vec(TMotif*)*& result,
 		i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber,
-		int choiceStartT, int choiceEndT);
-
+		int choiceStartT, int choiceEndT, int TFchoice);
 	void findTMotifsDynamic(int k, vec(TMotif*)*& newResult, int oriEndT,
 		i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber) {}
 
-//	void genMotifInOneIntv(SAVEINFONOST_VIter& iterStart, SAVEINFONOST_VIter& iterEnd,
-//		i2iHMap& vertex2Pos, DisjointSet*& disjointSet, int& vertexNum,
-//		vec(int)& combineCCPos, int& realMotifNum,
-//		i2iHMap& root2Comp, vec(CComponents*)& tempComponents,
-//		vec(int)& saveCCPos, int motifStartT, int motifEndT,
-//		vec(TMotif*)*& result, int k, long long& motifNumber);
-//
-//
-//#pragma region generateMaxTM
-//	/*fetch the new edge from one R edge set and insert into the disjoint set (maintain connectivity)*/
-//	void maintainUFSet(SAVEINFONOST_VIter& infoBegin,
-//		SAVEINFONOST_VIter& infoEnd, i2iHMap& vertex2Pos, DisjointSet*& ufset, int&vertexNum,
-//		vec(int)& combineCCPos);
-//
-//	/*add edge into generated motif or generate new motif and check left expandable
-//			(generateMaxTM case 1, 2 and add edge into generated motif in generateMaxTM case 3)*/
-//	void updateNewEdgeInfo(
-//		SAVEINFONOST_VIter& infoBegin, SAVEINFONOST_VIter& infoEnd,
-//		vec(CComponents*)& tempComponents,
-//		i2iHMap& vertex2Pos, DisjointSet*& disjointSet,
-//		i2iHMap& root2Comp, /*int& tempComponentsSize,*/ int& realMotifNum,
-//		vec(int)& saveCCPos, int startTime);
-//#pragma endregion 
+	/*add edge into generated motif or generate new motif and check left expandable
+			(generateMaxTM case 1, 2 and add edge into generated motif in generateMaxTM case 3)*/
+	void TGraphNoStruct::updateNewEdgeInfo(
+		veciter(int)& infoBegin, veciter(int)& infoEnd,
+		vec(CComponents*)& tempComponents,
+		i2iHMap& vertex2Pos, DisjointSet*& disjointSet,
+		i2iHMap& root2Comp, /*int& tempComponentsSize,*/ int& realMotifNum,
+		vec(int)& saveCCPos, int startTime);
+	/*DFTM (row number<=T-k+1)*/
+	void findTMotifsDynamic(int k, vec(TMotif*)*& newResult, int oriEndT,
+		i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber, int TFchoice);
+
+	void runDFTM(int k, vec(TMotif*)*& newResult, int oriEndT, i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber, int TFchoice);
 private:
 	/*
 	create the eL table and IC trees
@@ -87,32 +76,23 @@ private:
 		vec(int)& t_arr, vec(Label)& w_arr/*,
 		unordered_map<int, int>* &name2id*/);
 
-		
-	void computeRES(int intvB, int intvE,
+	void computeRES(int scanT, int k,
 		vec(int)*& edgeSetsR, int& selectedNum,
-		unordered_map<Label, bool>& fixLabel,
-		bool isEdgeTypeFixed) {}
-	/*computeRES for FTM*/
-	void computeRES(int choiceStartT, int choiceEndT,
-		SAVEINFONOST_Vec*& edgeSetsR,
-		unordered_map<Label, bool>& fixLabel,
-		bool isEdgeTypeFixed, int k, int setsRNum);
-	void computeRES(int intvB, int intvE, int*& scanP,
-		SAVEINFO_Vec*& edgeSetsR, int& selectedNum,
 		unordered_map<Label, bool>& fixLabel,
 		bool isEdgeTypeFixed);
 
 	/*computeRES for DFTM (row <= T-k+1)*/
-	void computeRESForDFTM(int intvB, int intvE,
+	void computeRESForDFTM(int scanT, int oriEndT, int k,
 		vec(int)*& edgeSetsR, int& selectedNum,
 		unordered_map<Label, bool>& fixLabel,
-		bool isEdgeTypeFixed, int k, vec(TMotif*)*& result, int pos) {}
+		bool isEdgeTypeFixed, vec(TMotif*)*& result, int pos);
 
 	/*get the label of edge with edgeId at the time*/
 	Label getWeight(int time, int edgeId);
 
 #pragma region structure 
 #pragma region Only save temporal graph label   
+	int *cE; // record the ending timestamp of the edge with the same label 
 	Label** eW; // lab_t:temporal graph label   eW[t][edgeId] O(TE)
 #pragma endregion
 #pragma endregion  

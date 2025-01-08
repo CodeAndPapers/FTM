@@ -1,0 +1,5092 @@
+graph : solveM3.txt
+choice : 9
+fixed time : 0,100
+choose eL structure
+EL structures: 81608Byte
+load: 0ms
+Input temporal graph information:
+number of node: 197	number of edge: 101
+time length: 101	start time: 0	end time: 100
+after create index: Memory Use:3657728Byte
+k : 5
+maxSm: 95
+averSm: 83
+maxSmT: 71 averSmT: 39
+gctime: 6ms
+averEtf: 0 maxEtf: 28
+update: 1ms
+Input temporal graph information:
+number of node: 197	number of edge: 101
+time length: 288	start time: 0	end time: 287
+before algorithm: Memory Use:3915776Byte
+maxSm: 85
+averSm: 74
+maxSmT: 85 averSmT: 30
+inctime: 11ms
+motifs: 81
+
+startT: 0	endT: 98
+No: 1
+edges: 1
+52640,52641,-1
+
+startT: 0	endT: 97
+No: 1
+edges: 1
+44743,45219,-1
+No: 2
+edges: 1
+53178,55027,-1
+
+startT: 0	endT: 95
+No: 1
+edges: 1
+67594,67595,-1
+
+startT: 0	endT: 91
+No: 1
+edges: 1
+61802,61803,-1
+No: 2
+edges: 1
+19419,19899,-1
+No: 3
+edges: 1
+12184,12185,-1
+
+startT: 0	endT: 90
+No: 1
+edges: 1
+45519,48382,-1
+
+startT: 0	endT: 89
+No: 1
+edges: 1
+32802,55331,-1
+
+startT: 0	endT: 88
+No: 1
+edges: 1
+60053,60379,-1
+
+startT: 0	endT: 85
+No: 1
+edges: 1
+18769,18770,-1
+
+startT: 0	endT: 83
+No: 1
+edges: 1
+13253,15044,-1
+No: 2
+edges: 1
+23392,26527,1
+
+startT: 0	endT: 79
+No: 1
+edges: 1
+56628,56630,-1
+
+startT: 0	endT: 76
+No: 1
+edges: 1
+13109,13775,-1
+
+startT: 0	endT: 75
+No: 1
+edges: 1
+61884,63221,-1
+
+startT: 0	endT: 73
+No: 1
+edges: 1
+40977,40979,-1
+
+startT: 0	endT: 71
+No: 1
+edges: 1
+40594,40652,-1
+
+startT: 0	endT: 70
+No: 1
+edges: 1
+29172,30249,-1
+
+startT: 0	endT: 69
+No: 1
+edges: 1
+56314,56316,-1
+
+startT: 0	endT: 66
+No: 1
+edges: 1
+20202,20318,-1
+
+startT: 0	endT: 62
+No: 1
+edges: 1
+58585,58951,-1
+
+startT: 0	endT: 54
+No: 1
+edges: 1
+75526,75655,-1
+
+startT: 0	endT: 40
+No: 1
+edges: 1
+38983,38985,-1
+
+startT: 0	endT: 36
+No: 1
+edges: 1
+337,1070,-1
+
+startT: 0	endT: 35
+No: 1
+edges: 1
+52576,55881,-1
+
+startT: 0	endT: 30
+No: 1
+edges: 1
+77452,77705,-1
+
+startT: 0	endT: 29
+No: 1
+edges: 1
+43656,48423,-1
+
+startT: 0	endT: 26
+No: 1
+edges: 2
+40607,40609,-1
+40607,40608,-1
+
+startT: 0	endT: 25
+No: 1
+edges: 1
+12096,12098,-1
+
+startT: 0	endT: 21
+No: 1
+edges: 1
+21661,21664,-1
+
+startT: 0	endT: 20
+No: 1
+edges: 1
+19353,19397,-1
+
+startT: 0	endT: 19
+No: 1
+edges: 1
+50248,52658,-1
+
+startT: 0	endT: 16
+No: 1
+edges: 1
+38466,40190,-1
+
+startT: 0	endT: 13
+No: 1
+edges: 1
+32397,32399,-1
+No: 2
+edges: 1
+50056,51305,1
+
+startT: 0	endT: 12
+No: 1
+edges: 1
+9910,9911,-1
+
+startT: 0	endT: 11
+No: 1
+edges: 1
+3539,10075,-1
+No: 2
+edges: 1
+31585,31586,-1
+No: 3
+edges: 1
+65295,67047,-1
+
+startT: 0	endT: 10
+No: 1
+edges: 1
+34993,34995,-1
+No: 2
+edges: 1
+21013,21158,-1
+No: 3
+edges: 1
+22158,22159,1
+
+startT: 0	endT: 9
+No: 1
+edges: 1
+35179,35907,-1
+
+startT: 0	endT: 7
+No: 1
+edges: 1
+46900,48960,1
+
+startT: 0	endT: 6
+No: 1
+edges: 1
+24612,24613,-1
+
+startT: 0	endT: 5
+No: 1
+edges: 1
+45357,45661,-1
+No: 2
+edges: 1
+28516,28517,-1
+No: 3
+edges: 1
+28744,28754,-1
+No: 4
+edges: 1
+63462,63464,-1
+
+startT: 0	endT: 4
+No: 1
+edges: 1
+80757,80823,-1
+No: 2
+edges: 1
+71919,73306,-1
+No: 3
+edges: 1
+25613,25893,-1
+
+startT: 0	endT: 258
+No: 1
+edges: 1
+72506,73065,-1
+
+startT: 0	endT: 247
+No: 1
+edges: 1
+7541,7543,-1
+
+startT: 0	endT: 241
+No: 1
+edges: 1
+35456,36106,-1
+
+startT: 0	endT: 217
+No: 1
+edges: 1
+12805,12807,-1
+
+startT: 0	endT: 212
+No: 1
+edges: 1
+14743,14791,-1
+
+startT: 0	endT: 201
+No: 1
+edges: 1
+2967,2968,-1
+
+startT: 0	endT: 185
+No: 1
+edges: 1
+10246,10547,-1
+
+startT: 0	endT: 182
+No: 1
+edges: 1
+71345,71432,-1
+
+startT: 0	endT: 180
+No: 1
+edges: 1
+72749,72767,-1
+
+startT: 0	endT: 155
+No: 1
+edges: 1
+40834,40835,-1
+
+startT: 0	endT: 151
+No: 1
+edges: 1
+40607,40608,-1
+
+startT: 0	endT: 148
+No: 1
+edges: 1
+64717,66656,-1
+
+startT: 0	endT: 140
+No: 1
+edges: 1
+18222,18494,-1
+
+startT: 0	endT: 128
+No: 1
+edges: 1
+36900,37595,-1
+
+startT: 0	endT: 118
+No: 1
+edges: 1
+60018,60019,-1
+
+startT: 0	endT: 113
+No: 1
+edges: 1
+65344,66460,-1
+
+startT: 0	endT: 109
+No: 1
+edges: 1
+10543,11907,-1
+
+startT: 0	endT: 106
+No: 1
+edges: 1
+16174,16175,-1
+
+startT: 0	endT: 104
+No: 1
+edges: 1
+81196,81779,-1
+
+startT: 0	endT: 103
+No: 1
+edges: 1
+7031,18354,-1
+
+startT: 0	endT: 100
+No: 1
+edges: 1
+25423,25424,-1
+
+startT: 0	endT: 287
+No: 1
+edges: 1
+2556,2586,-1
+No: 2
+edges: 1
+72660,72960,-1
+No: 3
+edges: 1
+5586,5587,-1
+No: 4
+edges: 1
+1569,1612,-1
+No: 5
+edges: 1
+71240,71241,-1
+No: 6
+edges: 1
+40029,40033,-1
+No: 7
+edges: 1
+72766,72921,-1
+
+motifs: 1
+
+startT: 1	endT: 9
+No: 1
+edges: 1
+32490,35024,1
+
+motifs: 1
+
+startT: 2	endT: 18
+No: 1
+edges: 1
+31738,31827,1
+
+motifs: 5
+
+startT: 4	endT: 79
+No: 1
+edges: 1
+21660,21661,1
+
+startT: 4	endT: 64
+No: 1
+edges: 2
+56628,56630,-1
+56629,56630,1
+
+startT: 4	endT: 21
+No: 1
+edges: 2
+21661,21664,-1
+21660,21661,1
+
+startT: 4	endT: 11
+No: 1
+edges: 1
+45939,48610,-1
+
+startT: 4	endT: 8
+No: 1
+edges: 1
+43483,43509,2
+
+motifs: 3
+
+startT: 5	endT: 61
+No: 1
+edges: 1
+71919,73306,1
+
+startT: 5	endT: 20
+No: 1
+edges: 1
+21347,21349,-1
+
+startT: 5	endT: 10
+No: 1
+edges: 1
+25613,25893,1
+
+motifs: 5
+
+startT: 6	endT: 35
+No: 1
+edges: 1
+50087,53678,-1
+
+startT: 6	endT: 28
+No: 1
+edges: 1
+24285,26944,2
+
+startT: 6	endT: 13
+No: 1
+edges: 1
+24545,25737,1
+
+startT: 6	endT: 12
+No: 1
+edges: 1
+28744,28754,1
+
+startT: 6	endT: 232
+No: 1
+edges: 1
+80757,80823,-1
+
+motifs: 3
+
+startT: 7	endT: 22
+No: 1
+edges: 1
+21572,21575,1
+
+startT: 7	endT: 11
+No: 1
+edges: 1
+21433,21434,-1
+No: 2
+edges: 1
+28516,28517,-1
+
+motifs: 2
+
+startT: 8	endT: 37
+No: 1
+edges: 2
+61802,61803,-1
+61801,61803,-1
+
+startT: 8	endT: 15
+No: 1
+edges: 1
+24612,24613,-1
+
+motifs: 3
+
+startT: 9	endT: 64
+No: 1
+edges: 1
+21575,21580,1
+
+startT: 9	endT: 22
+No: 1
+edges: 2
+21572,21575,1
+21575,21580,1
+
+startT: 9	endT: 16
+No: 1
+edges: 1
+53833,53942,1
+
+motifs: 1
+
+startT: 10	endT: 216
+No: 1
+edges: 1
+35179,35907,1
+
+motifs: 4
+
+startT: 11	endT: 87
+No: 1
+edges: 1
+25613,25893,-1
+
+startT: 11	endT: 36
+No: 1
+edges: 1
+46900,48960,1
+
+startT: 11	endT: 16
+No: 1
+edges: 1
+60280,60710,2
+
+startT: 11	endT: 108
+No: 1
+edges: 1
+34993,34995,1
+
+motifs: 9
+
+startT: 12	endT: 31
+No: 1
+edges: 1
+21433,21434,1
+
+startT: 12	endT: 30
+No: 1
+edges: 1
+28516,28517,1
+
+startT: 12	endT: 26
+No: 1
+edges: 1
+65295,67047,2
+
+startT: 12	endT: 25
+No: 1
+edges: 1
+45939,48610,1
+
+startT: 12	endT: 20
+No: 1
+edges: 1
+63462,63464,1
+
+startT: 12	endT: 19
+No: 1
+edges: 1
+45357,45661,-1
+
+startT: 12	endT: 17
+No: 1
+edges: 1
+22158,22159,1
+
+startT: 12	endT: 16
+No: 1
+edges: 1
+32490,35024,1
+
+startT: 12	endT: 287
+No: 1
+edges: 1
+3539,10075,1
+
+motifs: 3
+
+startT: 13	endT: 22
+No: 1
+edges: 1
+28744,28754,-1
+
+startT: 13	endT: 18
+No: 1
+edges: 1
+43483,43509,1
+
+startT: 13	endT: 116
+No: 1
+edges: 1
+9910,9911,1
+
+motifs: 2
+
+startT: 14	endT: 20
+No: 1
+edges: 1
+27741,27895,-1
+
+startT: 14	endT: 287
+No: 1
+edges: 1
+32397,32399,1
+
+motifs: 3
+
+startT: 15	endT: 41
+No: 1
+edges: 1
+21013,21158,1
+
+startT: 15	endT: 23
+No: 1
+edges: 1
+24545,25737,1
+
+startT: 15	endT: 21
+No: 1
+edges: 1
+50056,51305,1
+
+motifs: 2
+
+startT: 17	endT: 24
+No: 1
+edges: 1
+38466,40190,1
+
+startT: 17	endT: 22
+No: 1
+edges: 1
+24612,24613,-1
+
+motifs: 2
+
+startT: 18	endT: 32
+No: 1
+edges: 1
+32490,35024,1
+
+startT: 18	endT: 29
+No: 1
+edges: 1
+31585,31586,-1
+
+motifs: 2
+
+startT: 20	endT: 30
+No: 1
+edges: 1
+53833,53942,-1
+
+startT: 20	endT: 113
+No: 1
+edges: 1
+60280,60710,-1
+
+motifs: 1
+
+startT: 21	endT: 42
+No: 1
+edges: 1
+63462,63464,-1
+
+motifs: 5
+
+startT: 22	endT: 94
+No: 1
+edges: 1
+21661,21664,2
+
+startT: 22	endT: 79
+No: 1
+edges: 2
+21660,21661,1
+21661,21664,2
+
+startT: 22	endT: 40
+No: 1
+edges: 1
+43483,43509,1
+
+startT: 22	endT: 27
+No: 1
+edges: 1
+45357,45661,-1
+No: 2
+edges: 1
+34063,34969,2
+
+motifs: 3
+
+startT: 23	endT: 67
+No: 1
+edges: 1
+28744,28754,1
+
+startT: 23	endT: 44
+No: 1
+edges: 1
+63113,64061,1
+
+startT: 23	endT: 27
+No: 1
+edges: 1
+19537,19687,1
+
+motifs: 4
+
+startT: 24	endT: 52
+No: 1
+edges: 1
+21347,21349,-1
+
+startT: 24	endT: 46
+No: 1
+edges: 1
+19353,19397,-1
+
+startT: 24	endT: 36
+No: 1
+edges: 1
+31738,31827,1
+
+startT: 24	endT: 28
+No: 1
+edges: 1
+24612,24613,-1
+
+motifs: 4
+
+startT: 25	endT: 83
+No: 1
+edges: 1
+21572,21575,1
+
+startT: 25	endT: 64
+No: 1
+edges: 2
+21575,21580,1
+21572,21575,1
+
+startT: 25	endT: 47
+No: 1
+edges: 1
+50248,52658,1
+
+startT: 25	endT: 34
+No: 1
+edges: 1
+38466,40190,-1
+
+motifs: 2
+
+startT: 26	endT: 48
+No: 1
+edges: 1
+12096,12098,1
+
+startT: 26	endT: 33
+No: 1
+edges: 1
+45939,48610,-1
+
+motifs: 2
+
+startT: 27	endT: 64
+No: 1
+edges: 1
+65295,67047,1
+
+startT: 27	endT: 37
+No: 1
+edges: 2
+40607,40608,-1
+40607,40609,2
+
+motifs: 2
+
+startT: 29	endT: 62
+No: 1
+edges: 1
+24285,26944,1
+
+startT: 29	endT: 42
+No: 1
+edges: 1
+50056,51305,1
+
+motifs: 2
+
+startT: 30	endT: 36
+No: 1
+edges: 1
+31585,31586,2
+
+startT: 30	endT: 35
+No: 1
+edges: 1
+43656,48423,1
+
+motifs: 3
+
+startT: 31	endT: 58
+No: 1
+edges: 1
+77452,77705,1
+
+startT: 31	endT: 46
+No: 1
+edges: 1
+53833,53942,1
+
+startT: 31	endT: 35
+No: 1
+edges: 1
+45357,45661,-1
+
+motifs: 4
+
+startT: 32	endT: 55
+No: 1
+edges: 1
+24612,24613,-1
+
+startT: 32	endT: 41
+No: 1
+edges: 1
+34063,34969,2
+
+startT: 32	endT: 40
+No: 1
+edges: 1
+21433,21434,-1
+
+startT: 32	endT: 37
+No: 1
+edges: 1
+24545,25737,-1
+
+motifs: 1
+
+startT: 33	endT: 38
+No: 1
+edges: 1
+22158,22159,2
+
+motifs: 2
+
+startT: 34	endT: 55
+No: 1
+edges: 1
+28516,28517,1
+
+startT: 34	endT: 42
+No: 1
+edges: 1
+45939,48610,1
+
+motifs: 1
+
+startT: 35	endT: 44
+No: 1
+edges: 1
+32490,35024,1
+
+motifs: 2
+
+startT: 36	endT: 78
+No: 1
+edges: 1
+38466,40190,2
+
+startT: 36	endT: 53
+No: 1
+edges: 1
+43656,48423,2
+
+motifs: 3
+
+startT: 37	endT: 69
+No: 1
+edges: 1
+31585,31586,-1
+
+startT: 37	endT: 46
+No: 1
+edges: 1
+31738,31827,-1
+
+startT: 37	endT: 287
+No: 1
+edges: 1
+337,1070,1
+
+motifs: 1
+
+startT: 38	endT: 82
+No: 1
+edges: 1
+24545,25737,2
+
+motifs: 5
+
+startT: 39	endT: 74
+No: 1
+edges: 1
+52576,55881,2
+
+startT: 39	endT: 65
+No: 1
+edges: 2
+40607,40608,-1
+40607,40609,1
+
+startT: 39	endT: 59
+No: 1
+edges: 1
+22158,22159,1
+
+startT: 39	endT: 44
+No: 1
+edges: 1
+27741,27895,-1
+
+startT: 39	endT: 43
+No: 1
+edges: 1
+46900,48960,2
+
+motifs: 1
+
+startT: 40	endT: 59
+No: 1
+edges: 1
+50087,53678,-1
+
+motifs: 4
+
+startT: 41	endT: 80
+No: 1
+edges: 1
+43483,43509,-1
+
+startT: 41	endT: 67
+No: 1
+edges: 1
+21433,21434,1
+
+startT: 41	endT: 57
+No: 1
+edges: 2
+61802,61803,-1
+61801,61803,-1
+
+startT: 41	endT: 211
+No: 1
+edges: 1
+38983,38985,1
+
+motifs: 1
+
+startT: 42	endT: 48
+No: 1
+edges: 1
+34063,34969,-1
+
+motifs: 1
+
+startT: 43	endT: 79
+No: 1
+edges: 1
+63462,63464,1
+
+motifs: 1
+
+startT: 44	endT: 73
+No: 1
+edges: 1
+46900,48960,1
+
+motifs: 4
+
+startT: 45	endT: 70
+No: 1
+edges: 1
+21013,21158,1
+
+startT: 45	endT: 51
+No: 1
+edges: 1
+63113,64061,2
+
+startT: 45	endT: 49
+No: 1
+edges: 1
+45357,45661,-1
+No: 2
+edges: 1
+32490,35024,-1
+
+motifs: 3
+
+startT: 47	endT: 58
+No: 1
+edges: 1
+53833,53942,-1
+
+startT: 47	endT: 52
+No: 1
+edges: 1
+45939,48610,1
+
+startT: 47	endT: 51
+No: 1
+edges: 1
+31738,31827,1
+
+motifs: 2
+
+startT: 48	endT: 87
+No: 1
+edges: 1
+50248,52658,-1
+
+startT: 48	endT: 55
+No: 1
+edges: 1
+27741,27895,-1
+
+motifs: 1
+
+startT: 49	endT: 87
+No: 1
+edges: 1
+12096,12098,-1
+
+motifs: 1
+
+startT: 50	endT: 58
+No: 1
+edges: 1
+45357,45661,1
+
+motifs: 3
+
+startT: 51	endT: 70
+No: 1
+edges: 1
+19537,19687,1
+
+startT: 51	endT: 68
+No: 1
+edges: 1
+19353,19397,-1
+
+startT: 51	endT: 56
+No: 1
+edges: 1
+32490,35024,-1
+
+motifs: 3
+
+startT: 52	endT: 67
+No: 1
+edges: 1
+31738,31827,-1
+No: 2
+edges: 1
+34063,34969,-1
+
+startT: 52	endT: 59
+No: 1
+edges: 1
+63113,64061,-1
+
+motifs: 3
+
+startT: 53	endT: 79
+No: 1
+edges: 1
+21347,21349,1
+
+startT: 53	endT: 71
+No: 1
+edges: 1
+45939,48610,-1
+
+startT: 53	endT: 60
+No: 1
+edges: 1
+50056,51305,1
+
+motifs: 1
+
+startT: 54	endT: 69
+No: 1
+edges: 1
+43656,48423,1
+
+motifs: 1
+
+startT: 55	endT: 287
+No: 1
+edges: 1
+75526,75655,2
+
+motifs: 1
+
+startT: 56	endT: 60
+No: 1
+edges: 1
+24612,24613,1
+
+motifs: 2
+
+startT: 57	endT: 69
+No: 1
+edges: 1
+27741,27895,-1
+
+startT: 57	endT: 65
+No: 1
+edges: 1
+32490,35024,1
+
+motifs: 2
+
+startT: 58	endT: 72
+No: 1
+edges: 1
+28516,28517,1
+
+startT: 58	endT: 67
+No: 1
+edges: 2
+61802,61803,-1
+61801,61803,1
+
+motifs: 2
+
+startT: 59	endT: 77
+No: 1
+edges: 1
+77452,77705,2
+
+startT: 59	endT: 67
+No: 1
+edges: 1
+45357,45661,-1
+
+motifs: 2
+
+startT: 60	endT: 65
+No: 1
+edges: 1
+50087,53678,1
+
+startT: 60	endT: 64
+No: 1
+edges: 1
+22158,22159,-1
+
+motifs: 2
+
+startT: 61	endT: 67
+No: 1
+edges: 1
+24612,24613,-1
+
+startT: 61	endT: 65
+No: 1
+edges: 1
+50056,51305,-1
+
+motifs: 1
+
+startT: 62	endT: 154
+No: 1
+edges: 1
+71919,73306,2
+
+motifs: 2
+
+startT: 63	endT: 81
+No: 1
+edges: 1
+58585,58951,1
+
+startT: 63	endT: 69
+No: 1
+edges: 1
+24285,26944,2
+
+motifs: 2
+
+startT: 65	endT: 79
+No: 1
+edges: 2
+56628,56630,-1
+56629,56630,2
+
+startT: 65	endT: 256
+No: 1
+edges: 1
+56629,56630,2
+
+motifs: 3
+
+startT: 66	endT: 80
+No: 1
+edges: 1
+50056,51305,1
+No: 2
+edges: 2
+40607,40608,-1
+40607,40609,-1
+
+startT: 66	endT: 70
+No: 1
+edges: 1
+65295,67047,1
+
+motifs: 2
+
+startT: 67	endT: 81
+No: 1
+edges: 1
+20202,20318,2
+
+startT: 67	endT: 77
+No: 1
+edges: 1
+53833,53942,1
+
+motifs: 3
+
+startT: 68	endT: 82
+No: 1
+edges: 2
+61802,61803,-1
+61801,61803,-1
+
+startT: 68	endT: 78
+No: 1
+edges: 1
+28744,28754,2
+
+startT: 68	endT: 72
+No: 1
+edges: 1
+21433,21434,2
+
+motifs: 4
+
+startT: 69	endT: 84
+No: 1
+edges: 1
+21575,21580,1
+
+startT: 69	endT: 83
+No: 1
+edges: 2
+21572,21575,1
+21575,21580,1
+
+startT: 69	endT: 81
+No: 1
+edges: 1
+45357,45661,-1
+
+startT: 69	endT: 73
+No: 1
+edges: 1
+22158,22159,1
+
+motifs: 4
+
+startT: 70	endT: 81
+No: 1
+edges: 1
+24612,24613,-1
+No: 2
+edges: 1
+24285,26944,1
+
+startT: 70	endT: 78
+No: 1
+edges: 1
+19353,19397,-1
+
+startT: 70	endT: 75
+No: 1
+edges: 1
+56314,56316,1
+
+motifs: 1
+
+startT: 71	endT: 76
+No: 1
+edges: 1
+32490,35024,-1
+
+motifs: 4
+
+startT: 72	endT: 79
+No: 1
+edges: 1
+21013,21158,1
+
+startT: 72	endT: 78
+No: 1
+edges: 1
+50087,53678,-1
+
+startT: 72	endT: 76
+No: 1
+edges: 1
+43656,48423,1
+
+startT: 72	endT: 287
+No: 1
+edges: 1
+40594,40652,2
+
+motifs: 3
+
+startT: 73	endT: 80
+No: 1
+edges: 1
+34063,34969,-1
+
+startT: 73	endT: 77
+No: 1
+edges: 1
+28516,28517,-1
+No: 2
+edges: 1
+63113,64061,-1
+
+motifs: 1
+
+startT: 74	endT: 146
+No: 1
+edges: 1
+40977,40979,2
+
+motifs: 1
+
+startT: 75	endT: 96
+No: 1
+edges: 1
+52576,55881,1
+
+motifs: 4
+
+startT: 76	endT: 88
+No: 1
+edges: 1
+56314,56316,-1
+
+startT: 76	endT: 80
+No: 1
+edges: 1
+19537,19687,2
+
+startT: 76	endT: 190
+No: 1
+edges: 1
+61884,63221,1
+
+startT: 76	endT: 101
+No: 1
+edges: 1
+31585,31586,-1
+
+motifs: 5
+
+startT: 77	endT: 96
+No: 1
+edges: 1
+32490,35024,1
+
+startT: 77	endT: 93
+No: 1
+edges: 1
+46900,48960,1
+
+startT: 77	endT: 85
+No: 1
+edges: 1
+27741,27895,1
+
+startT: 77	endT: 84
+No: 1
+edges: 1
+13109,13775,1
+
+startT: 77	endT: 81
+No: 1
+edges: 1
+21433,21434,2
+
+motifs: 2
+
+startT: 78	endT: 83
+No: 1
+edges: 1
+28516,28517,1
+
+startT: 78	endT: 108
+No: 1
+edges: 1
+31738,31827,1
+
+motifs: 2
+
+startT: 79	endT: 90
+No: 1
+edges: 1
+28744,28754,1
+
+startT: 79	endT: 89
+No: 1
+edges: 1
+53833,53942,1
+
+motifs: 4
+
+startT: 80	endT: 91
+No: 1
+edges: 1
+19353,19397,2
+
+startT: 80	endT: 86
+No: 1
+edges: 1
+65295,67047,1
+No: 2
+edges: 2
+21661,21664,2
+21660,21661,-1
+
+startT: 80	endT: 84
+No: 1
+edges: 1
+50087,53678,-1
+
+motifs: 4
+
+startT: 81	endT: 88
+No: 1
+edges: 1
+43656,48423,1
+No: 2
+edges: 1
+21013,21158,1
+No: 3
+edges: 1
+22158,22159,2
+
+startT: 81	endT: 86
+No: 1
+edges: 2
+56629,56630,2
+56628,56630,-1
+
+motifs: 4
+
+startT: 82	endT: 90
+No: 1
+edges: 1
+21433,21434,1
+No: 2
+edges: 1
+24285,26944,2
+
+startT: 82	endT: 87
+No: 1
+edges: 1
+77452,77705,-1
+No: 2
+edges: 2
+40607,40608,-1
+40607,40609,-1
+
+motifs: 4
+
+startT: 83	endT: 93
+No: 1
+edges: 1
+61801,61803,1
+
+startT: 83	endT: 91
+No: 1
+edges: 1
+38466,40190,2
+No: 2
+edges: 2
+61802,61803,-1
+61801,61803,1
+
+startT: 83	endT: 181
+No: 1
+edges: 1
+58585,58951,1
+
+motifs: 4
+
+startT: 84	endT: 90
+No: 1
+edges: 1
+23392,26527,2
+No: 2
+edges: 1
+29172,30249,-1
+
+startT: 84	endT: 89
+No: 1
+edges: 1
+21572,21575,2
+
+startT: 84	endT: 143
+No: 1
+edges: 1
+13253,15044,1
+
+motifs: 2
+
+startT: 85	endT: 99
+No: 1
+edges: 1
+63462,63464,1
+
+startT: 85	endT: 101
+No: 1
+edges: 1
+19537,19687,1
+
+motifs: 3
+
+startT: 86	endT: 93
+No: 1
+edges: 1
+24612,24613,1
+
+startT: 86	endT: 128
+No: 1
+edges: 1
+18769,18770,1
+
+startT: 86	endT: 100
+No: 1
+edges: 1
+43483,43509,2
+
+motifs: 3
+
+startT: 87	endT: 94
+No: 1
+edges: 2
+21660,21661,1
+21661,21664,2
+
+startT: 87	endT: 92
+No: 1
+edges: 2
+56629,56630,2
+56628,56630,1
+
+startT: 87	endT: 157
+No: 1
+edges: 1
+21347,21349,1
+
+motifs: 6
+
+startT: 88	endT: 96
+No: 1
+edges: 1
+25613,25893,1
+
+startT: 88	endT: 95
+No: 1
+edges: 1
+63113,64061,1
+
+startT: 88	endT: 94
+No: 1
+edges: 1
+12096,12098,2
+
+startT: 88	endT: 93
+No: 1
+edges: 1
+28516,28517,1
+No: 2
+edges: 1
+13109,13775,1
+
+startT: 88	endT: 143
+No: 1
+edges: 1
+65295,67047,1
+
+motifs: 3
+
+startT: 89	endT: 98
+No: 1
+edges: 1
+24545,25737,2
+
+startT: 89	endT: 93
+No: 1
+edges: 1
+20202,20318,2
+
+startT: 89	endT: 248
+No: 1
+edges: 1
+60053,60379,2
+
+motifs: 4
+
+startT: 90	endT: 95
+No: 1
+edges: 1
+43656,48423,2
+
+startT: 90	endT: 108
+No: 1
+edges: 1
+50087,53678,2
+
+startT: 90	endT: 100
+No: 1
+edges: 1
+21013,21158,1
+
+startT: 90	endT: 287
+No: 1
+edges: 1
+32802,55331,2
+
+motifs: 3
+
+startT: 91	endT: 96
+No: 1
+edges: 1
+21572,21575,2
+
+startT: 91	endT: 95
+No: 1
+edges: 1
+24285,26944,1
+
+startT: 91	endT: 106
+No: 1
+edges: 1
+45519,48382,1
+
+motifs: 4
+
+startT: 92	endT: 98
+No: 1
+edges: 1
+19353,19397,1
+
+startT: 92	endT: 96
+No: 1
+edges: 1
+56314,56316,-1
+
+startT: 92	endT: 176
+No: 1
+edges: 1
+61802,61803,2
+
+startT: 92	endT: 287
+No: 1
+edges: 1
+19419,19899,2
+
+motifs: 3
+
+startT: 93	endT: 99
+No: 1
+edges: 1
+29172,30249,-1
+
+startT: 93	endT: 97
+No: 1
+edges: 2
+56629,56630,2
+56628,56630,-1
+
+startT: 93	endT: 100
+No: 1
+edges: 1
+23392,26527,2
+
+motifs: 7
+
+startT: 94	endT: 99
+No: 1
+edges: 1
+77452,77705,2
+No: 2
+edges: 1
+20202,20318,1
+
+startT: 94	endT: 98
+No: 1
+edges: 1
+34063,34969,1
+
+startT: 94	endT: 120
+No: 1
+edges: 1
+28516,28517,2
+
+startT: 94	endT: 104
+No: 1
+edges: 1
+24612,24613,2
+No: 2
+edges: 1
+21575,21580,2
+
+startT: 94	endT: 101
+No: 1
+edges: 1
+13109,13775,-1
+
+motifs: 5
+
+startT: 95	endT: 99
+No: 1
+edges: 2
+21660,21661,-1
+21661,21664,1
+
+startT: 95	endT: 119
+No: 1
+edges: 1
+46900,48960,1
+
+startT: 95	endT: 104
+No: 1
+edges: 2
+61802,61803,2
+61801,61803,1
+
+startT: 95	endT: 102
+No: 1
+edges: 1
+21661,21664,1
+
+startT: 95	endT: 101
+No: 1
+edges: 2
+40607,40608,-1
+40607,40609,-1
+
+motifs: 3
+
+startT: 96	endT: 183
+No: 1
+edges: 1
+38466,40190,2
+
+startT: 96	endT: 122
+No: 1
+edges: 1
+12184,12185,2
+
+startT: 96	endT: 106
+No: 1
+edges: 1
+50248,52658,1
+
+motifs: 1
+
+startT: 97	endT: 107
+No: 1
+edges: 1
+52576,55881,2
+
+motifs: 5
+
+startT: 98	endT: 145
+No: 1
+edges: 1
+53178,55027,1
+
+startT: 98	endT: 105
+No: 1
+edges: 1
+56314,56316,-1
+
+startT: 98	endT: 103
+No: 1
+edges: 1
+50056,51305,1
+
+startT: 98	endT: 102
+No: 1
+edges: 1
+63113,64061,1
+No: 2
+edges: 1
+32490,35024,1
+
+motifs: 4
+
+startT: 99	endT: 163
+No: 1
+edges: 1
+52640,52641,1
+
+startT: 99	endT: 147
+No: 1
+edges: 1
+67594,67595,-1
+
+startT: 99	endT: 110
+No: 1
+edges: 1
+25613,25893,1
+
+startT: 99	endT: 104
+No: 1
+edges: 1
+28744,28754,1
+
+motifs: 3
+
+startT: 100	endT: 124
+No: 1
+edges: 1
+77452,77705,1
+
+startT: 100	endT: 117
+No: 1
+edges: 1
+21660,21661,1
+
+startT: 100	endT: 106
+No: 1
+edges: 1
+21433,21434,1
+
+motifs: 4
+
+startT: 101	endT: 112
+No: 1
+edges: 1
+43656,48423,1
+No: 2
+edges: 1
+43483,43509,1
+
+startT: 101	endT: 109
+No: 1
+edges: 1
+34063,34969,1
+
+startT: 101	endT: 287
+No: 1
+edges: 1
+25423,25424,1
+
+motifs: 3
+
+startT: 102	endT: 119
+No: 1
+edges: 1
+44743,45219,2
+
+startT: 102	endT: 118
+No: 1
+edges: 1
+45357,45661,2
+
+startT: 102	endT: 107
+No: 1
+edges: 1
+13109,13775,2
+
+motifs: 3
+
+startT: 103	endT: 119
+No: 1
+edges: 1
+12096,12098,1
+
+startT: 103	endT: 113
+No: 1
+edges: 1
+19537,19687,1
+
+startT: 103	endT: 110
+No: 1
+edges: 2
+21660,21661,1
+21661,21664,2
+
+motifs: 2
+
+startT: 104	endT: 125
+No: 1
+edges: 1
+7031,18354,1
+
+startT: 104	endT: 108
+No: 1
+edges: 1
+22158,22159,1
+
+motifs: 4
+
+startT: 105	endT: 116
+No: 1
+edges: 1
+21575,21580,1
+
+startT: 105	endT: 115
+No: 1
+edges: 2
+56629,56630,2
+56628,56630,-1
+
+startT: 105	endT: 109
+No: 1
+edges: 1
+28744,28754,2
+No: 2
+edges: 1
+24285,26944,1
+
+motifs: 6
+
+startT: 106	endT: 161
+No: 1
+edges: 1
+81196,81779,-1
+
+startT: 106	endT: 125
+No: 1
+edges: 1
+21013,21158,1
+
+startT: 106	endT: 121
+No: 1
+edges: 1
+56314,56316,2
+
+startT: 106	endT: 117
+No: 1
+edges: 1
+20202,20318,-1
+
+startT: 106	endT: 110
+No: 1
+edges: 1
+24612,24613,2
+No: 2
+edges: 1
+53833,53942,1
+
+motifs: 5
+
+startT: 107	endT: 208
+No: 1
+edges: 1
+16174,16175,2
+
+startT: 107	endT: 118
+No: 1
+edges: 1
+45519,48382,2
+
+startT: 107	endT: 113
+No: 1
+edges: 1
+29172,30249,2
+
+startT: 107	endT: 111
+No: 1
+edges: 2
+61802,61803,2
+61801,61803,1
+No: 2
+edges: 1
+50248,52658,2
+
+motifs: 2
+
+startT: 108	endT: 117
+No: 1
+edges: 1
+13109,13775,1
+
+startT: 108	endT: 112
+No: 1
+edges: 1
+52576,55881,1
+
+motifs: 5
+
+startT: 109	endT: 218
+No: 1
+edges: 1
+31585,31586,-1
+
+startT: 109	endT: 129
+No: 1
+edges: 1
+34993,34995,2
+
+startT: 109	endT: 119
+No: 1
+edges: 1
+32490,35024,1
+
+startT: 109	endT: 113
+No: 1
+edges: 1
+22158,22159,2
+No: 2
+edges: 2
+40607,40608,-1
+40607,40609,-1
+
+motifs: 4
+
+startT: 110	endT: 160
+No: 1
+edges: 1
+23392,26527,1
+
+startT: 110	endT: 118
+No: 1
+edges: 1
+50056,51305,1
+
+startT: 110	endT: 115
+No: 1
+edges: 1
+19353,19397,2
+
+startT: 110	endT: 287
+No: 1
+edges: 1
+10543,11907,1
+
+motifs: 2
+
+startT: 111	endT: 117
+No: 1
+edges: 1
+63113,64061,1
+No: 2
+edges: 1
+63462,63464,1
+
+motifs: 2
+
+startT: 112	endT: 123
+No: 1
+edges: 1
+50248,52658,1
+
+startT: 112	endT: 119
+No: 1
+edges: 1
+24285,26944,2
+
+motifs: 4
+
+startT: 113	endT: 130
+No: 1
+edges: 1
+21661,21664,2
+
+startT: 113	endT: 118
+No: 1
+edges: 1
+43483,43509,2
+
+startT: 113	endT: 117
+No: 1
+edges: 1
+27741,27895,2
+No: 2
+edges: 2
+21660,21661,1
+21661,21664,2
+
+motifs: 3
+
+startT: 114	endT: 130
+No: 1
+edges: 1
+31738,31827,1
+
+startT: 114	endT: 118
+No: 1
+edges: 1
+22158,22159,1
+No: 2
+edges: 1
+65344,66460,1
+
+motifs: 5
+
+startT: 115	endT: 145
+No: 1
+edges: 1
+60280,60710,-1
+
+startT: 115	endT: 141
+No: 1
+edges: 1
+52576,55881,2
+
+startT: 115	endT: 123
+No: 1
+edges: 1
+43656,48423,1
+
+startT: 115	endT: 120
+No: 1
+edges: 1
+34063,34969,-1
+No: 2
+edges: 1
+21572,21575,1
+
+motifs: 2
+
+startT: 116	endT: 125
+No: 1
+edges: 1
+29172,30249,1
+
+startT: 116	endT: 120
+No: 1
+edges: 2
+56629,56630,2
+56628,56630,1
+
+motifs: 4
+
+startT: 118	endT: 131
+No: 1
+edges: 2
+61802,61803,2
+61801,61803,1
+
+startT: 118	endT: 124
+No: 1
+edges: 1
+24612,24613,2
+
+startT: 118	endT: 123
+No: 1
+edges: 1
+13109,13775,-1
+No: 2
+edges: 2
+40607,40608,-1
+40607,40609,-1
+
+motifs: 7
+
+startT: 119	endT: 209
+No: 1
+edges: 1
+65344,66460,-1
+
+startT: 119	endT: 130
+No: 1
+edges: 1
+28744,28754,2
+
+startT: 119	endT: 127
+No: 1
+edges: 1
+45519,48382,1
+
+startT: 119	endT: 125
+No: 1
+edges: 1
+45939,48610,2
+
+startT: 119	endT: 124
+No: 1
+edges: 1
+63113,64061,1
+No: 2
+edges: 2
+21661,21664,2
+21660,21661,1
+
+startT: 119	endT: 287
+No: 1
+edges: 1
+60018,60019,2
+
+motifs: 3
+
+startT: 120	endT: 163
+No: 1
+edges: 1
+44743,45219,1
+
+startT: 120	endT: 146
+No: 1
+edges: 1
+50056,51305,1
+
+startT: 120	endT: 124
+No: 1
+edges: 1
+63462,63464,1
+
+motifs: 6
+
+startT: 121	endT: 219
+No: 1
+edges: 1
+12096,12098,1
+
+startT: 121	endT: 157
+No: 1
+edges: 1
+9910,9911,1
+
+startT: 121	endT: 133
+No: 1
+edges: 1
+32490,35024,1
+
+startT: 121	endT: 130
+No: 1
+edges: 1
+46900,48960,1
+
+startT: 121	endT: 127
+No: 1
+edges: 1
+28516,28517,1
+No: 2
+edges: 2
+56629,56630,2
+56628,56630,-1
+
+motifs: 3
+
+startT: 122	endT: 217
+No: 1
+edges: 1
+56314,56316,-1
+
+startT: 122	endT: 138
+No: 1
+edges: 1
+25613,25893,1
+
+startT: 122	endT: 133
+No: 1
+edges: 1
+45357,45661,2
+
+motifs: 3
+
+startT: 123	endT: 170
+No: 1
+edges: 1
+20202,20318,1
+
+startT: 123	endT: 144
+No: 1
+edges: 1
+12184,12185,1
+
+startT: 123	endT: 134
+No: 1
+edges: 1
+19537,19687,1
+
+motifs: 1
+
+startT: 124	endT: 128
+No: 1
+edges: 1
+21433,21434,1
+
+motifs: 3
+
+startT: 125	endT: 148
+No: 1
+edges: 2
+40607,40608,-1
+40607,40609,-1
+
+startT: 125	endT: 134
+No: 1
+edges: 1
+43656,48423,1
+
+startT: 125	endT: 131
+No: 1
+edges: 1
+63462,63464,2
+
+motifs: 3
+
+startT: 126	endT: 136
+No: 1
+edges: 1
+7031,18354,2
+
+startT: 126	endT: 131
+No: 1
+edges: 1
+63113,64061,-1
+
+startT: 126	endT: 130
+No: 1
+edges: 1
+21575,21580,1
+
+motifs: 2
+
+startT: 127	endT: 143
+No: 1
+edges: 1
+21013,21158,1
+
+startT: 127	endT: 132
+No: 1
+edges: 1
+21660,21661,2
+
+motifs: 5
+
+startT: 128	endT: 159
+No: 1
+edges: 1
+45519,48382,2
+
+startT: 128	endT: 142
+No: 1
+edges: 1
+28516,28517,2
+
+startT: 128	endT: 136
+No: 1
+edges: 1
+27741,27895,1
+
+startT: 128	endT: 135
+No: 1
+edges: 1
+21572,21575,1
+
+startT: 128	endT: 132
+No: 1
+edges: 1
+43483,43509,2
+
+motifs: 4
+
+startT: 129	endT: 234
+No: 1
+edges: 1
+36900,37595,2
+
+startT: 129	endT: 176
+No: 1
+edges: 1
+13109,13775,1
+
+startT: 129	endT: 148
+No: 1
+edges: 1
+18769,18770,2
+
+startT: 129	endT: 139
+No: 1
+edges: 1
+77452,77705,1
+
+motifs: 1
+
+startT: 130	endT: 139
+No: 1
+edges: 1
+34993,34995,1
+
+motifs: 4
+
+startT: 131	endT: 150
+No: 1
+edges: 1
+50087,53678,-1
+
+startT: 131	endT: 146
+No: 1
+edges: 1
+50248,52658,1
+
+startT: 131	endT: 141
+No: 1
+edges: 1
+21433,21434,1
+
+startT: 131	endT: 137
+No: 1
+edges: 1
+21661,21664,1
+
+motifs: 2
+
+startT: 132	endT: 140
+No: 1
+edges: 1
+31738,31827,1
+
+startT: 132	endT: 136
+No: 1
+edges: 1
+24285,26944,2
+
+motifs: 3
+
+startT: 133	endT: 150
+No: 1
+edges: 1
+28744,28754,1
+
+startT: 133	endT: 138
+No: 1
+edges: 2
+61802,61803,2
+61801,61803,1
+No: 2
+edges: 1
+43483,43509,1
+
+motifs: 2
+
+startT: 134	endT: 146
+No: 1
+edges: 2
+56629,56630,2
+56628,56630,1
+
+startT: 134	endT: 139
+No: 1
+edges: 1
+21575,21580,1
+
+motifs: 3
+
+startT: 135	endT: 158
+No: 1
+edges: 1
+21660,21661,1
+
+startT: 135	endT: 147
+No: 1
+edges: 1
+32490,35024,1
+
+startT: 135	endT: 139
+No: 1
+edges: 1
+63113,64061,-1
+
+motifs: 2
+
+startT: 136	endT: 145
+No: 1
+edges: 1
+53833,53942,1
+
+startT: 136	endT: 142
+No: 1
+edges: 1
+24612,24613,-1
+
+motifs: 1
+
+startT: 137	endT: 282
+No: 1
+edges: 1
+7031,18354,1
+
+motifs: 3
+
+startT: 138	endT: 146
+No: 1
+edges: 1
+27741,27895,1
+
+startT: 138	endT: 145
+No: 1
+edges: 2
+21660,21661,1
+21661,21664,2
+
+startT: 138	endT: 144
+No: 1
+edges: 1
+43656,48423,1
+
+motifs: 3
+
+startT: 139	endT: 146
+No: 1
+edges: 1
+45939,48610,2
+
+startT: 139	endT: 145
+No: 1
+edges: 1
+45357,45661,2
+
+startT: 139	endT: 143
+No: 1
+edges: 1
+43483,43509,2
+
+motifs: 2
+
+startT: 140	endT: 148
+No: 1
+edges: 1
+34993,34995,2
+
+startT: 140	endT: 144
+No: 1
+edges: 1
+19353,19397,-1
+
+motifs: 6
+
+startT: 141	endT: 164
+No: 1
+edges: 1
+24545,25737,2
+
+startT: 141	endT: 160
+No: 1
+edges: 1
+46900,48960,1
+
+startT: 141	endT: 147
+No: 1
+edges: 1
+25613,25893,1
+
+startT: 141	endT: 145
+No: 1
+edges: 1
+63462,63464,2
+No: 2
+edges: 1
+21572,21575,-1
+
+startT: 141	endT: 287
+No: 1
+edges: 1
+18222,18494,2
+
+motifs: 3
+
+startT: 142	endT: 152
+No: 1
+edges: 1
+24285,26944,2
+
+startT: 142	endT: 147
+No: 1
+edges: 1
+63113,64061,1
+
+startT: 142	endT: 146
+No: 1
+edges: 2
+61802,61803,2
+61801,61803,1
+
+motifs: 4
+
+startT: 144	endT: 179
+No: 1
+edges: 1
+13253,15044,2
+
+startT: 144	endT: 153
+No: 1
+edges: 1
+77452,77705,1
+
+startT: 144	endT: 149
+No: 1
+edges: 1
+22158,22159,1
+
+startT: 144	endT: 148
+No: 1
+edges: 1
+21013,21158,-1
+
+motifs: 2
+
+startT: 145	endT: 160
+No: 1
+edges: 1
+65295,67047,1
+
+startT: 145	endT: 151
+No: 1
+edges: 1
+29172,30249,1
+
+motifs: 3
+
+startT: 146	endT: 156
+No: 1
+edges: 1
+21572,21575,1
+
+startT: 146	endT: 154
+No: 1
+edges: 1
+34063,34969,1
+
+startT: 146	endT: 287
+No: 1
+edges: 1
+53178,55027,-1
+
+motifs: 3
+
+startT: 147	endT: 167
+No: 1
+edges: 1
+53833,53942,1
+
+startT: 147	endT: 161
+No: 1
+edges: 1
+12184,12185,-1
+
+startT: 147	endT: 155
+No: 1
+edges: 1
+43656,48423,1
+
+motifs: 8
+
+startT: 148	endT: 167
+No: 1
+edges: 1
+60280,60710,-1
+
+startT: 148	endT: 163
+No: 1
+edges: 1
+67594,67595,1
+No: 2
+edges: 1
+21661,21664,2
+
+startT: 148	endT: 158
+No: 1
+edges: 2
+21660,21661,1
+21661,21664,2
+
+startT: 148	endT: 157
+No: 1
+edges: 1
+25613,25893,-1
+
+startT: 148	endT: 154
+No: 1
+edges: 1
+27741,27895,1
+
+startT: 148	endT: 153
+No: 1
+edges: 1
+32490,35024,2
+
+startT: 148	endT: 152
+No: 1
+edges: 1
+45939,48610,2
+
+motifs: 6
+
+startT: 149	endT: 261
+No: 1
+edges: 1
+64717,66656,1
+
+startT: 149	endT: 195
+No: 1
+edges: 1
+34993,34995,1
+
+startT: 149	endT: 176
+No: 1
+edges: 1
+18769,18770,1
+
+startT: 149	endT: 154
+No: 1
+edges: 1
+21013,21158,1
+No: 2
+edges: 2
+56629,56630,2
+56628,56630,1
+
+startT: 149	endT: 153
+No: 1
+edges: 1
+31738,31827,-1
+
+motifs: 3
+
+startT: 150	endT: 283
+No: 1
+edges: 1
+40977,40979,2
+
+startT: 150	endT: 179
+No: 1
+edges: 1
+40607,40609,-1
+
+startT: 150	endT: 157
+No: 1
+edges: 1
+21433,21434,1
+
+motifs: 1
+
+startT: 151	endT: 160
+No: 1
+edges: 1
+19353,19397,-1
+
+motifs: 9
+
+startT: 152	endT: 194
+No: 1
+edges: 1
+52576,55881,2
+
+startT: 152	endT: 179
+No: 1
+edges: 2
+40607,40609,-1
+40607,40608,1
+
+startT: 152	endT: 161
+No: 1
+edges: 1
+19537,19687,1
+No: 2
+edges: 1
+50087,53678,-1
+
+startT: 152	endT: 160
+No: 1
+edges: 2
+61802,61803,2
+61801,61803,1
+
+startT: 152	endT: 158
+No: 1
+edges: 1
+63462,63464,1
+
+startT: 152	endT: 156
+No: 1
+edges: 1
+28516,28517,1
+No: 2
+edges: 1
+29172,30249,-1
+
+startT: 152	endT: 287
+No: 1
+edges: 1
+40607,40608,1
+
+motifs: 2
+
+startT: 154	endT: 163
+No: 1
+edges: 1
+50248,52658,1
+
+startT: 154	endT: 158
+No: 1
+edges: 1
+77452,77705,2
+
+motifs: 2
+
+startT: 156	endT: 161
+No: 1
+edges: 1
+50056,51305,1
+
+startT: 156	endT: 287
+No: 1
+edges: 1
+40834,40835,2
+
+motifs: 4
+
+startT: 157	endT: 182
+No: 1
+edges: 1
+21575,21580,1
+
+startT: 157	endT: 175
+No: 1
+edges: 1
+71919,73306,-1
+
+startT: 157	endT: 165
+No: 1
+edges: 1
+28516,28517,2
+
+startT: 157	endT: 162
+No: 1
+edges: 1
+24285,26944,1
+
+motifs: 3
+
+startT: 158	endT: 173
+No: 1
+edges: 1
+43656,48423,1
+
+startT: 158	endT: 170
+No: 1
+edges: 2
+56629,56630,2
+56628,56630,1
+
+startT: 158	endT: 163
+No: 1
+edges: 1
+29172,30249,-1
+
+motifs: 5
+
+startT: 159	endT: 186
+No: 1
+edges: 1
+21347,21349,1
+
+startT: 159	endT: 172
+No: 1
+edges: 1
+77452,77705,-1
+
+startT: 159	endT: 166
+No: 1
+edges: 1
+32490,35024,1
+
+startT: 159	endT: 164
+No: 1
+edges: 1
+45357,45661,2
+
+startT: 159	endT: 163
+No: 1
+edges: 2
+21660,21661,2
+21661,21664,2
+
+motifs: 2
+
+startT: 160	endT: 254
+No: 1
+edges: 1
+45519,48382,1
+
+startT: 160	endT: 166
+No: 1
+edges: 1
+63462,63464,1
+
+motifs: 4
+
+startT: 161	endT: 185
+No: 1
+edges: 1
+21013,21158,1
+
+startT: 161	endT: 173
+No: 1
+edges: 1
+65295,67047,-1
+
+startT: 161	endT: 170
+No: 1
+edges: 1
+31738,31827,1
+
+startT: 161	endT: 167
+No: 1
+edges: 1
+21433,21434,1
+
+motifs: 5
+
+startT: 162	endT: 242
+No: 1
+edges: 1
+12184,12185,1
+
+startT: 162	endT: 198
+No: 1
+edges: 1
+46900,48960,1
+
+startT: 162	endT: 176
+No: 1
+edges: 2
+61801,61803,1
+61802,61803,2
+
+startT: 162	endT: 169
+No: 1
+edges: 1
+81196,81779,1
+
+startT: 162	endT: 167
+No: 1
+edges: 1
+19353,19397,-1
+
+motifs: 5
+
+startT: 163	endT: 176
+No: 1
+edges: 1
+50087,53678,-1
+
+startT: 163	endT: 175
+No: 1
+edges: 1
+50056,51305,1
+
+startT: 163	endT: 171
+No: 1
+edges: 1
+23392,26527,1
+
+startT: 163	endT: 169
+No: 1
+edges: 2
+21575,21580,1
+21572,21575,1
+
+startT: 163	endT: 167
+No: 1
+edges: 1
+45939,48610,1
+
+motifs: 5
+
+startT: 164	endT: 203
+No: 1
+edges: 1
+67594,67595,-1
+
+startT: 164	endT: 181
+No: 1
+edges: 1
+52640,52641,2
+
+startT: 164	endT: 177
+No: 1
+edges: 1
+21660,21661,1
+
+startT: 164	endT: 176
+No: 1
+edges: 1
+25613,25893,1
+
+startT: 164	endT: 171
+No: 1
+edges: 1
+44743,45219,2
+
+motifs: 2
+
+startT: 165	endT: 170
+No: 1
+edges: 1
+27741,27895,1
+
+startT: 165	endT: 169
+No: 1
+edges: 1
+50248,52658,1
+
+motifs: 3
+
+startT: 166	endT: 179
+No: 1
+edges: 1
+9910,9911,1
+
+startT: 166	endT: 173
+No: 1
+edges: 1
+19537,19687,1
+
+startT: 166	endT: 172
+No: 1
+edges: 1
+28516,28517,-1
+
+motifs: 2
+
+startT: 167	endT: 181
+No: 1
+edges: 1
+43483,43509,1
+
+startT: 167	endT: 171
+No: 1
+edges: 1
+24545,25737,2
+
+motifs: 4
+
+startT: 168	endT: 176
+No: 1
+edges: 1
+63462,63464,1
+
+startT: 168	endT: 174
+No: 1
+edges: 1
+45357,45661,2
+
+startT: 168	endT: 172
+No: 1
+edges: 1
+45939,48610,2
+No: 2
+edges: 1
+60280,60710,2
+
+motifs: 3
+
+startT: 169	endT: 176
+No: 1
+edges: 1
+24285,26944,2
+
+startT: 169	endT: 173
+No: 1
+edges: 1
+21433,21434,1
+No: 2
+edges: 1
+53833,53942,1
+
+motifs: 1
+
+startT: 170	endT: 276
+No: 1
+edges: 1
+81196,81779,-1
+
+motifs: 2
+
+startT: 171	endT: 189
+No: 1
+edges: 1
+20202,20318,-1
+
+startT: 171	endT: 181
+No: 1
+edges: 2
+56629,56630,2
+56628,56630,-1
+
+motifs: 5
+
+startT: 172	endT: 181
+No: 1
+edges: 1
+28744,28754,1
+
+startT: 172	endT: 180
+No: 1
+edges: 1
+21661,21664,2
+
+startT: 172	endT: 177
+No: 1
+edges: 1
+24612,24613,-1
+No: 2
+edges: 1
+44743,45219,1
+No: 3
+edges: 2
+21660,21661,1
+21661,21664,2
+
+motifs: 5
+
+startT: 173	endT: 202
+No: 1
+edges: 1
+23392,26527,1
+
+startT: 173	endT: 194
+No: 1
+edges: 1
+77452,77705,1
+
+startT: 173	endT: 190
+No: 1
+edges: 1
+32490,35024,1
+
+startT: 173	endT: 183
+No: 1
+edges: 1
+31738,31827,1
+
+startT: 173	endT: 178
+No: 1
+edges: 1
+28516,28517,2
+
+motifs: 1
+
+startT: 174	endT: 180
+No: 1
+edges: 1
+65295,67047,1
+
+motifs: 2
+
+startT: 175	endT: 183
+No: 1
+edges: 1
+50248,52658,1
+
+startT: 175	endT: 181
+No: 1
+edges: 1
+21433,21434,1
+
+motifs: 3
+
+startT: 176	endT: 245
+No: 1
+edges: 1
+71919,73306,2
+
+startT: 176	endT: 189
+No: 1
+edges: 1
+60280,60710,-1
+
+startT: 176	endT: 180
+No: 1
+edges: 1
+27741,27895,1
+
+motifs: 3
+
+startT: 177	endT: 193
+No: 1
+edges: 1
+50056,51305,1
+
+startT: 177	endT: 182
+No: 1
+edges: 2
+21575,21580,1
+21572,21575,1
+
+startT: 177	endT: 287
+No: 1
+edges: 1
+61802,61803,1
+
+motifs: 1
+
+startT: 178	endT: 185
+No: 1
+edges: 1
+44743,45219,2
+
+motifs: 5
+
+startT: 179	endT: 204
+No: 1
+edges: 2
+61802,61803,1
+61801,61803,1
+
+startT: 179	endT: 200
+No: 1
+edges: 1
+28516,28517,1
+
+startT: 179	endT: 190
+No: 1
+edges: 1
+29172,30249,1
+
+startT: 179	endT: 183
+No: 1
+edges: 1
+45357,45661,2
+No: 2
+edges: 1
+53833,53942,1
+
+motifs: 4
+
+startT: 180	endT: 218
+No: 1
+edges: 1
+18769,18770,1
+
+startT: 180	endT: 194
+No: 1
+edges: 1
+13253,15044,1
+
+startT: 180	endT: 187
+No: 1
+edges: 1
+21660,21661,1
+
+startT: 180	endT: 184
+No: 1
+edges: 1
+9910,9911,2
+
+motifs: 4
+
+startT: 181	endT: 232
+No: 1
+edges: 1
+13109,13775,1
+
+startT: 181	endT: 185
+No: 1
+edges: 1
+43656,48423,1
+No: 2
+edges: 1
+65295,67047,-1
+
+startT: 181	endT: 287
+No: 1
+edges: 1
+72749,72767,2
+
+motifs: 5
+
+startT: 182	endT: 208
+No: 1
+edges: 1
+52640,52641,1
+
+startT: 182	endT: 198
+No: 1
+edges: 1
+58585,58951,2
+
+startT: 182	endT: 193
+No: 1
+edges: 1
+28744,28754,2
+
+startT: 182	endT: 186
+No: 1
+edges: 2
+56629,56630,2
+56628,56630,1
+No: 2
+edges: 1
+43483,43509,2
+
+motifs: 4
+
+startT: 183	endT: 198
+No: 1
+edges: 1
+63462,63464,1
+
+startT: 183	endT: 190
+No: 1
+edges: 2
+40607,40608,1
+40607,40609,-1
+
+startT: 183	endT: 188
+No: 1
+edges: 1
+19537,19687,1
+
+startT: 183	endT: 287
+No: 1
+edges: 1
+71345,71432,1
+
+motifs: 3
+
+startT: 184	endT: 203
+No: 1
+edges: 1
+21661,21664,2
+
+startT: 184	endT: 197
+No: 1
+edges: 1
+21572,21575,1
+
+startT: 184	endT: 189
+No: 1
+edges: 1
+38466,40190,1
+
+motifs: 2
+
+startT: 185	endT: 213
+No: 1
+edges: 1
+9910,9911,1
+
+startT: 185	endT: 194
+No: 1
+edges: 2
+21572,21575,1
+21575,21580,1
+
+motifs: 5
+
+startT: 186	endT: 202
+No: 1
+edges: 1
+24285,26944,2
+
+startT: 186	endT: 201
+No: 1
+edges: 1
+44743,45219,1
+
+startT: 186	endT: 194
+No: 1
+edges: 1
+19353,19397,-1
+
+startT: 186	endT: 190
+No: 1
+edges: 1
+25613,25893,-1
+
+startT: 186	endT: 287
+No: 1
+edges: 1
+10246,10547,1
+
+motifs: 5
+
+startT: 187	endT: 198
+No: 1
+edges: 1
+21013,21158,1
+
+startT: 187	endT: 195
+No: 1
+edges: 2
+56629,56630,2
+56628,56630,-1
+
+startT: 187	endT: 193
+No: 1
+edges: 1
+24545,25737,2
+No: 2
+edges: 1
+43483,43509,1
+
+startT: 187	endT: 191
+No: 1
+edges: 1
+31738,31827,1
+
+motifs: 1
+
+startT: 189	endT: 194
+No: 1
+edges: 1
+65295,67047,1
+
+motifs: 5
+
+startT: 190	endT: 208
+No: 1
+edges: 1
+21347,21349,1
+
+startT: 190	endT: 204
+No: 1
+edges: 1
+45357,45661,2
+
+startT: 190	endT: 202
+No: 1
+edges: 1
+60280,60710,1
+
+startT: 190	endT: 198
+No: 1
+edges: 1
+19537,19687,1
+
+startT: 190	endT: 287
+No: 1
+edges: 1
+20202,20318,1
+
+motifs: 4
+
+startT: 191	endT: 212
+No: 1
+edges: 1
+61884,63221,2
+
+startT: 191	endT: 209
+No: 1
+edges: 1
+25613,25893,1
+
+startT: 191	endT: 207
+No: 1
+edges: 1
+38466,40190,1
+
+startT: 191	endT: 197
+No: 1
+edges: 1
+50248,52658,1
+
+motifs: 3
+
+startT: 192	endT: 207
+No: 1
+edges: 1
+21660,21661,1
+
+startT: 192	endT: 203
+No: 1
+edges: 2
+21661,21664,2
+21660,21661,1
+
+startT: 192	endT: 196
+No: 1
+edges: 1
+29172,30249,1
+
+motifs: 5
+
+startT: 193	endT: 204
+No: 1
+edges: 1
+31738,31827,1
+
+startT: 193	endT: 202
+No: 1
+edges: 1
+27741,27895,1
+
+startT: 193	endT: 200
+No: 1
+edges: 1
+22158,22159,2
+No: 2
+edges: 2
+40607,40608,1
+40607,40609,-1
+
+startT: 193	endT: 197
+No: 1
+edges: 1
+21433,21434,1
+
+motifs: 5
+
+startT: 195	endT: 227
+No: 1
+edges: 1
+13253,15044,2
+
+startT: 195	endT: 206
+No: 1
+edges: 1
+52576,55881,1
+
+startT: 195	endT: 202
+No: 1
+edges: 1
+77452,77705,2
+No: 2
+edges: 1
+63113,64061,1
+
+startT: 195	endT: 201
+No: 1
+edges: 1
+21575,21580,2
+
+motifs: 2
+
+startT: 196	endT: 257
+No: 1
+edges: 1
+34993,34995,2
+
+startT: 196	endT: 206
+No: 1
+edges: 1
+50087,53678,-1
+
+motifs: 2
+
+startT: 198	endT: 232
+No: 1
+edges: 1
+65295,67047,1
+
+startT: 198	endT: 208
+No: 1
+edges: 1
+43656,48423,1
+
+motifs: 2
+
+startT: 199	endT: 213
+No: 1
+edges: 2
+56629,56630,2
+56628,56630,-1
+
+startT: 199	endT: 212
+No: 1
+edges: 1
+58585,58951,1
+
+motifs: 6
+
+startT: 200	endT: 213
+No: 1
+edges: 1
+28744,28754,2
+
+startT: 200	endT: 207
+No: 1
+edges: 1
+19537,19687,1
+No: 2
+edges: 1
+21572,21575,1
+
+startT: 200	endT: 206
+No: 1
+edges: 1
+46900,48960,1
+No: 2
+edges: 1
+32490,35024,1
+
+startT: 200	endT: 205
+No: 1
+edges: 1
+21013,21158,1
+
+motifs: 1
+
+startT: 201	endT: 221
+No: 1
+edges: 1
+63462,63464,2
+
+motifs: 4
+
+startT: 202	endT: 210
+No: 1
+edges: 1
+21433,21434,1
+
+startT: 202	endT: 209
+No: 1
+edges: 2
+40607,40608,1
+40607,40609,-1
+
+startT: 202	endT: 208
+No: 1
+edges: 1
+2967,2968,1
+
+startT: 202	endT: 206
+No: 1
+edges: 1
+50248,52658,1
+
+motifs: 3
+
+startT: 203	endT: 212
+No: 1
+edges: 1
+60280,60710,-1
+
+startT: 203	endT: 210
+No: 1
+edges: 1
+77452,77705,-1
+
+startT: 203	endT: 208
+No: 1
+edges: 1
+28516,28517,2
+
+motifs: 2
+
+startT: 204	endT: 210
+No: 1
+edges: 1
+24612,24613,2
+
+startT: 204	endT: 208
+No: 1
+edges: 1
+24545,25737,2
+
+motifs: 5
+
+startT: 205	endT: 226
+No: 1
+edges: 1
+67594,67595,-1
+
+startT: 205	endT: 223
+No: 1
+edges: 1
+21661,21664,2
+
+startT: 205	endT: 218
+No: 1
+edges: 1
+45939,48610,2
+
+startT: 205	endT: 209
+No: 1
+edges: 1
+21575,21580,2
+No: 2
+edges: 1
+43483,43509,2
+
+motifs: 5
+
+startT: 206	endT: 261
+No: 1
+edges: 1
+44743,45219,1
+
+startT: 206	endT: 223
+No: 1
+edges: 1
+31738,31827,1
+No: 2
+edges: 1
+23392,26527,1
+
+startT: 206	endT: 213
+No: 1
+edges: 1
+63113,64061,1
+
+startT: 206	endT: 210
+No: 1
+edges: 2
+61802,61803,1
+61801,61803,1
+
+motifs: 3
+
+startT: 207	endT: 225
+No: 1
+edges: 1
+52576,55881,2
+
+startT: 207	endT: 216
+No: 1
+edges: 1
+21013,21158,1
+
+startT: 207	endT: 212
+No: 1
+edges: 1
+32490,35024,2
+
+motifs: 4
+
+startT: 208	endT: 229
+No: 1
+edges: 1
+50248,52658,1
+
+startT: 208	endT: 213
+No: 1
+edges: 1
+38466,40190,2
+
+startT: 208	endT: 212
+No: 1
+edges: 1
+53833,53942,2
+No: 2
+edges: 2
+21661,21664,2
+21660,21661,2
+
+motifs: 4
+
+startT: 209	endT: 234
+No: 1
+edges: 1
+52640,52641,2
+
+startT: 209	endT: 214
+No: 1
+edges: 1
+19537,19687,1
+
+startT: 209	endT: 287
+No: 1
+edges: 1
+2967,2968,-1
+No: 2
+edges: 1
+16174,16175,1
+
+motifs: 5
+
+startT: 210	endT: 228
+No: 1
+edges: 1
+28516,28517,2
+
+startT: 210	endT: 227
+No: 1
+edges: 1
+24285,26944,2
+
+startT: 210	endT: 217
+No: 1
+edges: 1
+65344,66460,1
+
+startT: 210	endT: 216
+No: 1
+edges: 1
+21347,21349,1
+No: 2
+edges: 1
+43483,43509,1
+
+motifs: 4
+
+startT: 211	endT: 228
+No: 1
+edges: 1
+77452,77705,1
+
+startT: 211	endT: 219
+No: 1
+edges: 1
+24545,25737,2
+
+startT: 211	endT: 217
+No: 1
+edges: 1
+25613,25893,1
+
+startT: 211	endT: 216
+No: 1
+edges: 1
+21572,21575,2
+
+motifs: 3
+
+startT: 212	endT: 230
+No: 1
+edges: 1
+45357,45661,2
+
+startT: 212	endT: 221
+No: 1
+edges: 1
+50056,51305,1
+
+startT: 212	endT: 287
+No: 1
+edges: 1
+38983,38985,2
+
+motifs: 6
+
+startT: 213	endT: 225
+No: 1
+edges: 1
+24612,24613,2
+
+startT: 213	endT: 224
+No: 1
+edges: 1
+21660,21661,1
+
+startT: 213	endT: 223
+No: 1
+edges: 2
+21661,21664,2
+21660,21661,1
+
+startT: 213	endT: 217
+No: 1
+edges: 1
+60280,60710,1
+
+startT: 213	endT: 287
+No: 1
+edges: 1
+14743,14791,2
+No: 2
+edges: 1
+61884,63221,1
+
+motifs: 3
+
+startT: 214	endT: 236
+No: 1
+edges: 1
+38466,40190,1
+
+startT: 214	endT: 221
+No: 1
+edges: 1
+34063,34969,2
+
+startT: 214	endT: 219
+No: 1
+edges: 2
+56629,56630,2
+56628,56630,2
+
+motifs: 4
+
+startT: 216	endT: 267
+No: 1
+edges: 1
+58585,58951,1
+
+startT: 216	endT: 228
+No: 1
+edges: 1
+53833,53942,2
+
+startT: 216	endT: 222
+No: 1
+edges: 1
+19537,19687,1
+
+startT: 216	endT: 220
+No: 1
+edges: 1
+46900,48960,2
+
+motifs: 4
+
+startT: 217	endT: 227
+No: 1
+edges: 1
+35179,35907,2
+
+startT: 217	endT: 223
+No: 1
+edges: 1
+21347,21349,-1
+No: 2
+edges: 2
+40607,40608,1
+40607,40609,-1
+
+startT: 217	endT: 221
+No: 1
+edges: 1
+21572,21575,1
+
+motifs: 3
+
+startT: 218	endT: 240
+No: 1
+edges: 1
+9910,9911,1
+
+startT: 218	endT: 226
+No: 1
+edges: 1
+28744,28754,1
+
+startT: 218	endT: 223
+No: 1
+edges: 1
+12805,12807,1
+
+motifs: 5
+
+startT: 219	endT: 237
+No: 1
+edges: 1
+18769,18770,2
+
+startT: 219	endT: 230
+No: 1
+edges: 1
+32490,35024,1
+
+startT: 219	endT: 224
+No: 1
+edges: 1
+21433,21434,2
+No: 2
+edges: 1
+21013,21158,1
+
+startT: 219	endT: 287
+No: 1
+edges: 1
+56314,56316,-1
+
+motifs: 6
+
+startT: 220	endT: 241
+No: 1
+edges: 1
+31585,31586,-1
+
+startT: 220	endT: 236
+No: 1
+edges: 2
+56629,56630,2
+56628,56630,1
+
+startT: 220	endT: 229
+No: 1
+edges: 1
+25613,25893,1
+
+startT: 220	endT: 226
+No: 1
+edges: 1
+29172,30249,1
+
+startT: 220	endT: 224
+No: 1
+edges: 1
+27741,27895,1
+No: 2
+edges: 1
+12096,12098,-1
+
+motifs: 2
+
+startT: 221	endT: 234
+No: 1
+edges: 1
+43483,43509,1
+
+startT: 221	endT: 228
+No: 1
+edges: 1
+46900,48960,1
+
+motifs: 4
+
+startT: 222	endT: 236
+No: 1
+edges: 1
+43656,48423,1
+
+startT: 222	endT: 230
+No: 1
+edges: 1
+21572,21575,2
+
+startT: 222	endT: 229
+No: 1
+edges: 1
+65344,66460,-1
+
+startT: 222	endT: 228
+No: 1
+edges: 1
+19353,19397,-1
+
+motifs: 1
+
+startT: 223	endT: 227
+No: 1
+edges: 1
+50056,51305,1
+
+motifs: 3
+
+startT: 224	endT: 281
+No: 1
+edges: 1
+21347,21349,1
+
+startT: 224	endT: 243
+No: 1
+edges: 1
+23392,26527,2
+
+startT: 224	endT: 230
+No: 1
+edges: 1
+19537,19687,1
+
+motifs: 3
+
+startT: 225	endT: 271
+No: 1
+edges: 1
+12096,12098,1
+
+startT: 225	endT: 248
+No: 1
+edges: 1
+31738,31827,1
+
+startT: 225	endT: 234
+No: 1
+edges: 1
+50087,53678,-1
+
+motifs: 3
+
+startT: 226	endT: 284
+No: 1
+edges: 2
+40607,40608,1
+40607,40609,-1
+
+startT: 226	endT: 262
+No: 1
+edges: 1
+52576,55881,1
+
+startT: 226	endT: 251
+No: 1
+edges: 1
+21661,21664,2
+
+motifs: 5
+
+startT: 227	endT: 240
+No: 1
+edges: 1
+28744,28754,2
+
+startT: 227	endT: 238
+No: 1
+edges: 1
+67594,67595,1
+
+startT: 227	endT: 236
+No: 1
+edges: 1
+60280,60710,-1
+
+startT: 227	endT: 233
+No: 1
+edges: 1
+29172,30249,-1
+
+startT: 227	endT: 232
+No: 1
+edges: 2
+61802,61803,1
+61801,61803,1
+
+motifs: 3
+
+startT: 228	endT: 248
+No: 1
+edges: 1
+35179,35907,1
+
+startT: 228	endT: 245
+No: 1
+edges: 2
+21661,21664,2
+21660,21661,1
+
+startT: 228	endT: 287
+No: 1
+edges: 1
+13253,15044,1
+
+motifs: 4
+
+startT: 229	endT: 242
+No: 1
+edges: 1
+50056,51305,1
+
+startT: 229	endT: 237
+No: 1
+edges: 1
+77452,77705,2
+
+startT: 229	endT: 236
+No: 1
+edges: 1
+28516,28517,1
+
+startT: 229	endT: 233
+No: 1
+edges: 1
+19353,19397,1
+
+motifs: 3
+
+startT: 230	endT: 249
+No: 1
+edges: 1
+63462,63464,1
+
+startT: 230	endT: 245
+No: 1
+edges: 1
+46900,48960,1
+
+startT: 230	endT: 236
+No: 1
+edges: 1
+24545,25737,1
+
+motifs: 3
+
+startT: 231	endT: 236
+No: 1
+edges: 1
+22158,22159,2
+No: 2
+edges: 1
+21572,21575,1
+
+startT: 231	endT: 287
+No: 1
+edges: 1
+12805,12807,-1
+
+motifs: 2
+
+startT: 232	endT: 241
+No: 1
+edges: 1
+21013,21158,1
+
+startT: 232	endT: 240
+No: 1
+edges: 1
+24285,26944,1
+
+motifs: 5
+
+startT: 233	endT: 246
+No: 1
+edges: 1
+25613,25893,-1
+
+startT: 233	endT: 240
+No: 1
+edges: 1
+45357,45661,1
+
+startT: 233	endT: 238
+No: 1
+edges: 1
+53833,53942,1
+
+startT: 233	endT: 287
+No: 1
+edges: 1
+80757,80823,2
+No: 2
+edges: 1
+65344,66460,-1
+
+motifs: 1
+
+startT: 234	endT: 241
+No: 1
+edges: 2
+61802,61803,1
+61801,61803,1
+
+motifs: 4
+
+startT: 235	endT: 242
+No: 1
+edges: 1
+43483,43509,2
+
+startT: 235	endT: 287
+No: 1
+edges: 1
+36900,37595,-1
+No: 2
+edges: 1
+52640,52641,1
+No: 3
+edges: 1
+65295,67047,1
+
+motifs: 1
+
+startT: 236	endT: 242
+No: 1
+edges: 1
+50087,53678,-1
+
+motifs: 4
+
+startT: 237	endT: 245
+No: 1
+edges: 1
+28516,28517,2
+
+startT: 237	endT: 243
+No: 1
+edges: 1
+38466,40190,2
+No: 2
+edges: 1
+24545,25737,2
+
+startT: 237	endT: 241
+No: 1
+edges: 1
+63113,64061,1
+
+motifs: 3
+
+startT: 238	endT: 252
+No: 1
+edges: 1
+77452,77705,1
+
+startT: 238	endT: 248
+No: 1
+edges: 1
+21575,21580,2
+
+startT: 238	endT: 287
+No: 1
+edges: 1
+18769,18770,1
+
+motifs: 1
+
+startT: 239	endT: 270
+No: 1
+edges: 1
+67594,67595,-1
+
+motifs: 1
+
+startT: 240	endT: 258
+No: 1
+edges: 1
+13109,13775,1
+
+motifs: 1
+
+startT: 241	endT: 247
+No: 1
+edges: 1
+9910,9911,2
+
+motifs: 5
+
+startT: 242	endT: 260
+No: 1
+edges: 1
+24285,26944,1
+
+startT: 242	endT: 251
+No: 1
+edges: 1
+45939,48610,-1
+
+startT: 242	endT: 250
+No: 1
+edges: 1
+53833,53942,1
+
+startT: 242	endT: 247
+No: 1
+edges: 1
+45357,45661,1
+
+startT: 242	endT: 287
+No: 1
+edges: 1
+35456,36106,2
+
+motifs: 6
+
+startT: 243	endT: 275
+No: 1
+edges: 1
+31585,31586,-1
+
+startT: 243	endT: 265
+No: 1
+edges: 1
+12184,12185,-1
+
+startT: 243	endT: 259
+No: 1
+edges: 2
+61802,61803,1
+61801,61803,1
+
+startT: 243	endT: 249
+No: 1
+edges: 1
+28744,28754,1
+No: 2
+edges: 1
+60280,60710,1
+
+startT: 243	endT: 247
+No: 1
+edges: 1
+43483,43509,-1
+
+motifs: 5
+
+startT: 244	endT: 280
+No: 1
+edges: 1
+21572,21575,1
+
+startT: 244	endT: 263
+No: 1
+edges: 1
+50087,53678,-1
+
+startT: 244	endT: 255
+No: 1
+edges: 1
+23392,26527,1
+
+startT: 244	endT: 248
+No: 1
+edges: 2
+21575,21580,2
+21572,21575,1
+No: 2
+edges: 1
+50056,51305,1
+
+motifs: 3
+
+startT: 246	endT: 269
+No: 1
+edges: 1
+19353,19397,-1
+
+startT: 246	endT: 258
+No: 1
+edges: 1
+28516,28517,1
+
+startT: 246	endT: 255
+No: 1
+edges: 1
+21013,21158,1
+
+motifs: 4
+
+startT: 247	endT: 256
+No: 1
+edges: 1
+32490,35024,1
+
+startT: 247	endT: 252
+No: 1
+edges: 1
+25613,25893,1
+
+startT: 247	endT: 251
+No: 1
+edges: 1
+38466,40190,2
+
+startT: 247	endT: 287
+No: 1
+edges: 1
+71919,73306,2
+
+motifs: 4
+
+startT: 248	endT: 257
+No: 1
+edges: 1
+43483,43509,2
+
+startT: 248	endT: 255
+No: 1
+edges: 1
+7541,7543,1
+
+startT: 248	endT: 252
+No: 1
+edges: 1
+22158,22159,2
+
+startT: 248	endT: 287
+No: 1
+edges: 1
+9910,9911,1
+
+motifs: 4
+
+startT: 249	endT: 265
+No: 1
+edges: 1
+35179,35907,2
+
+startT: 249	endT: 255
+No: 1
+edges: 1
+24545,25737,2
+
+startT: 249	endT: 253
+No: 1
+edges: 1
+29172,30249,1
+
+startT: 249	endT: 287
+No: 1
+edges: 1
+60053,60379,1
+
+motifs: 4
+
+startT: 250	endT: 274
+No: 1
+edges: 1
+31738,31827,1
+
+startT: 250	endT: 272
+No: 1
+edges: 2
+21572,21575,1
+21575,21580,2
+
+startT: 250	endT: 259
+No: 1
+edges: 1
+50056,51305,1
+
+startT: 250	endT: 254
+No: 1
+edges: 1
+63113,64061,1
+
+motifs: 2
+
+startT: 251	endT: 269
+No: 1
+edges: 1
+21433,21434,1
+
+startT: 251	endT: 258
+No: 1
+edges: 1
+43656,48423,1
+
+motifs: 3
+
+startT: 252	endT: 259
+No: 1
+edges: 1
+38466,40190,1
+
+startT: 252	endT: 257
+No: 1
+edges: 1
+45939,48610,1
+
+startT: 252	endT: 256
+No: 1
+edges: 1
+63462,63464,1
+
+motifs: 3
+
+startT: 253	endT: 263
+No: 1
+edges: 1
+28744,28754,1
+
+startT: 253	endT: 258
+No: 1
+edges: 1
+22158,22159,1
+
+startT: 253	endT: 257
+No: 1
+edges: 1
+25613,25893,-1
+
+motifs: 2
+
+startT: 254	endT: 265
+No: 1
+edges: 1
+53833,53942,1
+
+startT: 254	endT: 287
+No: 1
+edges: 1
+77452,77705,-1
+
+motifs: 5
+
+startT: 256	endT: 266
+No: 1
+edges: 1
+46900,48960,1
+No: 2
+edges: 1
+21661,21664,2
+
+startT: 256	endT: 264
+No: 1
+edges: 1
+23392,26527,2
+
+startT: 256	endT: 287
+No: 1
+edges: 1
+7541,7543,-1
+No: 2
+edges: 1
+45519,48382,1
+
+motifs: 4
+
+startT: 257	endT: 271
+No: 1
+edges: 1
+21660,21661,1
+
+startT: 257	endT: 268
+No: 1
+edges: 1
+19537,19687,1
+
+startT: 257	endT: 266
+No: 1
+edges: 2
+21661,21664,2
+21660,21661,1
+
+startT: 257	endT: 287
+No: 1
+edges: 1
+56629,56630,1
+
+motifs: 5
+
+startT: 258	endT: 272
+No: 1
+edges: 1
+50248,52658,1
+
+startT: 258	endT: 266
+No: 1
+edges: 2
+56629,56630,1
+56628,56630,1
+
+startT: 258	endT: 262
+No: 1
+edges: 1
+34063,34969,-1
+No: 2
+edges: 1
+32490,35024,1
+
+startT: 258	endT: 287
+No: 1
+edges: 1
+34993,34995,1
+
+motifs: 6
+
+startT: 259	endT: 281
+No: 1
+edges: 1
+43656,48423,-1
+
+startT: 259	endT: 270
+No: 1
+edges: 1
+63462,63464,1
+
+startT: 259	endT: 265
+No: 1
+edges: 1
+24545,25737,2
+
+startT: 259	endT: 264
+No: 1
+edges: 1
+29172,30249,-1
+
+startT: 259	endT: 287
+No: 1
+edges: 1
+13109,13775,-1
+No: 2
+edges: 1
+72506,73065,1
+
+motifs: 3
+
+startT: 260	endT: 269
+No: 1
+edges: 1
+43483,43509,2
+
+startT: 260	endT: 268
+No: 1
+edges: 1
+25613,25893,-1
+
+startT: 260	endT: 265
+No: 1
+edges: 1
+38466,40190,-1
+
+motifs: 1
+
+startT: 261	endT: 265
+No: 1
+edges: 1
+50056,51305,1
+
+motifs: 3
+
+startT: 262	endT: 276
+No: 1
+edges: 1
+64717,66656,-1
+
+startT: 262	endT: 287
+No: 1
+edges: 1
+44743,45219,-1
+No: 2
+edges: 1
+24285,26944,1
+
+motifs: 2
+
+startT: 263	endT: 275
+No: 1
+edges: 1
+52576,55881,2
+
+startT: 263	endT: 274
+No: 1
+edges: 1
+28516,28517,1
+
+motifs: 2
+
+startT: 265	endT: 274
+No: 1
+edges: 1
+22158,22159,1
+
+startT: 265	endT: 269
+No: 1
+edges: 1
+24612,24613,-1
+
+motifs: 3
+
+startT: 266	endT: 271
+No: 1
+edges: 1
+38466,40190,2
+
+startT: 266	endT: 287
+No: 1
+edges: 1
+12184,12185,1
+No: 2
+edges: 1
+35179,35907,1
+
+motifs: 8
+
+startT: 267	endT: 282
+No: 1
+edges: 1
+28744,28754,1
+
+startT: 267	endT: 273
+No: 1
+edges: 1
+60280,60710,1
+No: 2
+edges: 1
+27741,27895,1
+
+startT: 267	endT: 271
+No: 1
+edges: 1
+46900,48960,-1
+No: 2
+edges: 1
+53833,53942,1
+No: 3
+edges: 2
+21660,21661,1
+21661,21664,1
+
+startT: 267	endT: 287
+No: 1
+edges: 2
+56628,56630,-1
+56629,56630,1
+No: 2
+edges: 1
+21661,21664,1
+
+motifs: 3
+
+startT: 268	endT: 282
+No: 1
+edges: 1
+23392,26527,2
+
+startT: 268	endT: 277
+No: 1
+edges: 1
+58585,58951,-1
+
+startT: 268	endT: 273
+No: 1
+edges: 1
+21013,21158,1
+
+motifs: 3
+
+startT: 269	endT: 276
+No: 1
+edges: 2
+61802,61803,1
+61801,61803,1
+
+startT: 269	endT: 275
+No: 1
+edges: 1
+24545,25737,2
+
+startT: 269	endT: 287
+No: 1
+edges: 1
+25613,25893,1
+
+motifs: 2
+
+startT: 270	endT: 274
+No: 1
+edges: 1
+50087,53678,-1
+No: 2
+edges: 1
+43483,43509,-1
+
+motifs: 1
+
+startT: 271	endT: 287
+No: 1
+edges: 1
+67594,67595,1
+
+motifs: 5
+
+startT: 272	endT: 281
+No: 1
+edges: 1
+29172,30249,-1
+
+startT: 272	endT: 277
+No: 1
+edges: 1
+38466,40190,-1
+No: 2
+edges: 1
+46900,48960,1
+
+startT: 272	endT: 276
+No: 1
+edges: 1
+24612,24613,-1
+No: 2
+edges: 1
+12096,12098,-1
+
+motifs: 3
+
+startT: 273	endT: 280
+No: 1
+edges: 2
+21572,21575,1
+21575,21580,1
+
+startT: 273	endT: 287
+No: 1
+edges: 1
+21575,21580,1
+No: 2
+edges: 1
+32490,35024,1
+
+motifs: 2
+
+startT: 274	endT: 278
+No: 1
+edges: 1
+21013,21158,-1
+
+startT: 274	endT: 287
+No: 1
+edges: 2
+21660,21661,1
+21661,21664,1
+
+motifs: 2
+
+startT: 275	endT: 280
+No: 1
+edges: 1
+50056,51305,1
+
+startT: 275	endT: 279
+No: 1
+edges: 1
+43483,43509,2
+
+motifs: 2
+
+startT: 276	endT: 281
+No: 1
+edges: 1
+50248,52658,1
+
+startT: 276	endT: 287
+No: 1
+edges: 1
+52576,55881,1
+
+motifs: 4
+
+startT: 277	endT: 284
+No: 1
+edges: 1
+64717,66656,1
+
+startT: 277	endT: 287
+No: 1
+edges: 1
+21433,21434,1
+No: 2
+edges: 1
+31585,31586,-1
+No: 3
+edges: 1
+81196,81779,1
+
+motifs: 1
+
+startT: 278	endT: 287
+No: 1
+edges: 1
+50087,53678,-1
+
+motifs: 5
+
+startT: 279	endT: 284
+No: 1
+edges: 1
+45939,48610,-1
+
+startT: 279	endT: 287
+No: 1
+edges: 1
+24612,24613,-1
+No: 2
+edges: 1
+24545,25737,1
+No: 3
+edges: 1
+60280,60710,-1
+No: 4
+edges: 1
+12096,12098,1
+
+motifs: 2
+
+startT: 280	endT: 285
+No: 1
+edges: 1
+27741,27895,1
+
+startT: 280	endT: 287
+No: 1
+edges: 1
+21013,21158,1
+
+motifs: 1
+
+startT: 281	endT: 287
+No: 1
+edges: 1
+22158,22159,1
+
+motifs: 6
+
+startT: 282	endT: 287
+No: 1
+edges: 1
+46900,48960,1
+No: 2
+edges: 1
+28516,28517,2
+No: 3
+edges: 1
+58585,58951,-1
+No: 4
+edges: 1
+19353,19397,-1
+No: 5
+edges: 1
+63462,63464,1
+No: 6
+edges: 2
+21575,21580,1
+21572,21575,1
+
+motifs: 6
+
+startT: 283	endT: 287
+No: 1
+edges: 1
+38466,40190,1
+No: 2
+edges: 1
+7031,18354,-1
+No: 3
+edges: 1
+21347,21349,1
+No: 4
+edges: 1
+23392,26527,1
+No: 5
+edges: 1
+50248,52658,1
+No: 6
+edges: 1
+28744,28754,-1
+
+motif max edges num: 2	motif avg edges num: 1.08719
+sum: 929
+after algorithm: Peak Memory Use:4276224Byte
+Real Peak Memory Use:4026368Byte
+release result: Memory Use:3923968Byte
+
+
+graph : solveM3.txt
+choice : 9
+fixed time : 0,100
+choose eL structure
+EL structures: 81608Byte
+load: 1ms
+Input temporal graph information:
+number of node: 197	number of edge: 101
+time length: 101	start time: 0	end time: 100
+after create index: Memory Use:3657728Byte
+k : 5
+maxSm: 95
+averSm: 83
+maxSmT: 71 averSmT: 39
+gctime: 6ms
+averEtf: 0 maxEtf: 28
+update: 0ms
+Input temporal graph information:
+number of node: 197	number of edge: 101
+time length: 288	start time: 0	end time: 287
+before algorithm: Memory Use:3932160Byte
+maxSm: 85
+averSm: 74
+maxSmT: 85 averSmT: 30
+inctime: 10ms
+motifs: 81

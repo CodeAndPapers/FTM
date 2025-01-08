@@ -55,7 +55,6 @@ public:
 		delete edge2ind;
 		if(ufset != NULL)
 			delete ufset;
-		delete[]EMaxIntvl;
 	}
 
 	#pragma region construct and update the temporal graph
@@ -83,17 +82,17 @@ public:
 
 	#pragma region FTM
 		/*FTM*/
-	void findTMotifs(int k, vec(TMotif*)*& result,
+	virtual void findTMotifs(int k, vec(TMotif*)*& result,
 		i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber,
-		int choiceStartT, int choiceEndT, int TFchoice);
+		int choiceStartT, int choiceEndT, int TFchoice) = 0;
 
-	#pragma region FTM step 1
-		/*computeRES*/
-		virtual void computeRES(int intvB, int intvE,
-			vec(int)*& selectedEdge, int& selectedNum,
-			unordered_map<Label, bool>& fixLabel,
-			bool isEdgeTypeFixed) = 0;
-	#pragma endregion 
+	//#pragma region FTM step 1
+	//	/*computeRES*/
+	//	virtual void computeRES(int intvB, int intvE,
+	//		vec(int)*& selectedEdge, int& selectedNum,
+	//		unordered_map<Label, bool>& fixLabel,
+	//		bool isEdgeTypeFixed) = 0;
+	//#pragma endregion 
 
 	#pragma region FTM step 2 and 3
 		/*generate motifs in one interval for FTM*/
@@ -125,12 +124,12 @@ public:
 			vec(int)& combineCCPos);
 		/*add edge into generated motif or generate new motif and check left expandable
 		(generateMaxTM case 1, 2 and add edge into generated motif in generateMaxTM case 3)*/
-		void updateNewEdgeInfo(
+		virtual void updateNewEdgeInfo(
 			veciter(int)& infoBegin, veciter(int)& infoEnd,
 			vec(CComponents*)& tempComponents,
 			i2iHMap& vertex2Pos, DisjointSet*& disjointSet,
 			i2iHMap& root2Comp, /*int& tempComponentsSize,*/ int& realMotifNum,
-			vec(int)& saveCCPos, int startTime);
+			vec(int)& saveCCPos, int startTime) = 0;
 		#pragma endregion
 
 		void generateExpTM(vec(int)&saveCCPos,
@@ -147,16 +146,10 @@ public:
 	#pragma endregion
 
 	/*DFTM (row number<=T-k+1)*/
-		void findTMotifsDynamic(int k, vec(TMotif*)*& newResult, int oriEndT,
-			i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber, int TFchoice);
+		virtual void findTMotifsDynamic(int k, vec(TMotif*)*& newResult, int oriEndT,
+			i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber, int TFchoice) = 0;
 
-	/*computeRES for DFTM (row <= T-k+1)*/
-	virtual void computeRESForDFTM(int intvB, int intvE,
-		vec(int)*& selectedEdge, int& selectedNum,
-		unordered_map<Label, bool>& fixLabel,
-		bool isEdgeTypeFixed, int k, vec(TMotif*)*& result, int pos) = 0;
-
-
+		virtual void runDFTM(int k, vec(TMotif*)*& newResult, int oriEndT, i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber, int TFchoice) = 0;
 	//reset vertexToId and union-find set
 	/*void resetStructure() {
 		vertexToId.clear();
@@ -202,7 +195,6 @@ protected:
 		//int* minEndTime; //O(max motif number)
 		SaveCCInfo* motifSaveInfo; //O(max motif number)
 
-		Intv *EMaxIntvl;
 public:
 		static int maxMotifNum; 
 	#pragma endregion

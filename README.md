@@ -38,8 +38,9 @@ file content format:
 
 - g : Index id (default:1)
 
-	- 1: eL table
-	- 5: IC tree
+	- 1: EL table
+	- 5: IC trees
+	- 6: another alternative algorithm (does not have EL table or IC trees)
 
 - l : Limit the start time and end time of input data (default:doesn't limit) format:-l:0,500
 
@@ -65,17 +66,21 @@ e.g.: -l:0,500 -n:1600 means that the interval of temporal graph is [0,500] befo
 
 1. FTNMotifs.exe -i:temporalgraph.txt -k:k10.txt -r:4 -g:1 -f:output.txt -o:1  
 
- (use EL table, only output the number of motifs and edges, time, memory)
+ (use EL table, only output the number of motifs and edges, time, memory usage)
 
 2. FTNMotifs.exe -i:temporalgraph.txt -k:k10.txt -r:4 -g:5 -f:output.txt -o:2 
 
-  (use IC trees, output nodes of edges, labels, the number of motifs and edges, time, memory) 
+  (use IC trees, output nodes of edges, labels, the number of motifs and edges, time and memory usage) 
+
+3. FTNMotifs.exe -i:temporalgraph.txt -k:k10.txt -r:4 -g:6 -f:output.txt -o:0 
+
+  (use another alternative algorithm FTM-NO, only output the number of motifs, time and memory usage) 
 
 **Example for incremental algorithm DFTM**
 
-3. FTNMotifs.exe -i:temporalgraph.txt -k:k10.txt -r:9 -g:1 -f:output.txt -o:0 -l:0,500 -n:1000    
+4. FTNMotifs.exe -i:temporalgraph.txt -k:k10.txt -r:9 -g:1 -f:output.txt -o:0 -l:0,500 -n:1000    
 
-(use EL table, only output the number of motifs, time, memory, interval of temporal graph is from [0,500] to [0,1000]) 
+(use EL table, only output the number of motifs, time, memory usage and interval of temporal graph is from [0,500] to [0,1000]) 
 ***
 
 ## Datasets

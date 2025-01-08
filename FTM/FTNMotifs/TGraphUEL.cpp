@@ -255,6 +255,175 @@ void TGraphUEL::createStructure(vec(int)& u_arr, vec(int)& v_arr,
 }
 
 
+#pragma region key static algorithms
+/*FTM*/
+void TGraphUEL::findTMotifs(int k, vec(TMotif*)*& result,
+	i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber,
+	int choiceStartT, int choiceEndT, int TFchoice) {
+#pragma region initialize
+	int lastTime = choiceEndT - k + 1;//last start time 
+	i2iHMap vertex2Pos;//map the vertex's id to the position in disjoint set
+	/*map the root in disjoint set to the position of its corresponding
+	connected component in the component list*/
+	i2iHMap root2Comp;
+
+	vec(CComponents*) tempComponents;//temporary component list CC
+	int lineNum = lastTime - choiceStartT + 1;
+	//int setsRNum = (lineNum * (lineNum + 1)) >> 1;
+	vec(int)* edgeSetsR = DBG_NEW vec(int)[maxIntervalLength];// R edge sets
+	DisjointSet* disjointSet;//disjoint set
+
+	veciter(int) iterEnd, iterStart;//iterator for edgeSetsR
+	veciter(CComponents*) listEnd;//iterator for tempComponents
+	int selectedNum;//the number of edges in edgeSetsR
+
+	vec(int) saveMotifPos;//record the position of components which need to be saved
+	/*record the position of components which need to combine with other components*/
+	vec(int) combineMotifPos;
+
+	long long maxSelect = 0;//the max number of edge in G(S[m,m+k-1])
+	long long selectedSum = 0;//the sum of edges in G(S[m,m+k-1])
+	clock_t begin;//record time
+	long long allSmt = 0, maxSmt = 0, smt;//the sum and the max number of S[m,T]
+
+	int vertexNum;//the number of vertexs
+	int realMotifNum;//the number of generated connected component
+	int edgeEndT;//record the currently considering end time of R edge sets
+	int Te;//the end time of interval
+	//int tempPosForEdgeSetsR = 0;
+#pragma endregion
+	for (int Ts = choiceStartT; Ts <= lastTime; Ts++/*, tempPosForEdgeSetsR += lineNum, lineNum--*/) {//O(T)
+
+		// select edges which keep fixed in [Ts,Ts+k-1]
+		begin = clock();
+		selectedNum = 0;
+		Te = Ts + k - 1;
+		computeRES(Ts, Te,
+			edgeSetsR, selectedNum,
+			fixLabel, isEdgeTypeFixed);
+
+		//initalize for every row
+		maxSelect = max(maxSelect, selectedNum);
+		selectedSum += selectedNum;
+		disjointSet = DBG_NEW DisjointSet((int)((selectedNum << 1) + 1));
+		vertex2Pos.clear();
+		root2Comp.clear();
+		vertexNum = 0;
+		realMotifNum = 0;
+		edgeEndT = choiceEndT;
+		Test::compr += clock() - begin;
+
+		//Test S(m,T)
+		if (maxIntervalLength <= choiceEndT - Te) smt = 0;
+		else smt = edgeSetsR[choiceEndT - Te].size();
+		//smt = edgeSetsR[choiceEndT - Te].size();
+		maxSmt = max(maxSmt, smt);
+		allSmt += smt;
+
+		//R2L
+		for (int tempT = choiceEndT - Te; tempT >= 0; tempT--, edgeEndT--) {
+			if (tempT >= maxIntervalLength) continue;
+			iterStart = edgeSetsR[tempT].begin();
+			iterEnd = edgeSetsR[tempT].end();
+			if (iterStart == iterEnd) continue;
+
+			//generateMaxTM and generatedExpTM
+			genMotifInOneIntv(iterStart, iterEnd,
+				vertex2Pos, disjointSet, vertexNum,
+				combineMotifPos, realMotifNum, root2Comp, tempComponents,
+				saveMotifPos, Ts, edgeEndT,
+				result, k, motifNumber, TFchoice);
+			edgeSetsR[tempT].clear();
+		}
+
+		//testing
+		Test::updateMemoryUse();
+		//Test::showMemoryUse();
+
+		//release
+		delete disjointSet;
+		listEnd = tempComponents.end();
+		for (veciter(CComponents*) listIter = tempComponents.begin();
+			listIter != listEnd; ++listIter) {
+			if (*listIter != NULL)
+				delete *listIter;
+		}
+		tempComponents.clear();
+	}
+	delete[] edgeSetsR;
+	cout << SELECT_EDGE << maxSelect << endl;
+	cout << MEAN_SELECT_EDGE << selectedSum / (lastTime - choiceStartT + 1) << endl;
+	cout << "maxSmT: " << maxSmt << " averSmT: " << allSmt / (lastTime - choiceStartT + 1) << endl;
+}
+#pragma endregion
+
+/*add edge into generated motif or generate new motif and check left expandable
+		(generateMaxTM case 1, 2 and add edge into generated motif in generateMaxTM case 3)*/
+void TGraphUEL::updateNewEdgeInfo(
+	veciter(int)& infoBegin, veciter(int)& infoEnd,
+	vec(CComponents*)& tempComponents,
+	i2iHMap& vertex2Pos, DisjointSet*& disjointSet,
+	i2iHMap& root2Comp, /*int& tempComponentsSize,*/ int& realMotifNum,
+	vec(int)& saveCCPos, int startTime) {
+
+#pragma region initialize
+	i2bHMap hasSaved;//means whether the motif has been saved 
+	i2iHMap_Iter mapIter;//root2Comp's iterator 
+	int root;//the root of one vertex in the disjoint set
+	int id;//the edge e's id
+	int checkStartT;//the edge e's start time of EMaxIntvl[e]
+	int label;//the edge e's label
+	int ccPos;//cc's position in tempComponents
+	/*the cc which has already generated/will generate*/
+	CComponents* generatedCC, *newCC;
+	int tempComponentsSize;//size of tempComponents
+#pragma endregion
+
+	for (veciter(int) infoIter = infoBegin;
+		infoIter != infoEnd; ++infoIter) {//new edges in R edge sets
+
+		id = *infoIter;//edge's id
+
+		/*the root of the edge's vertex in the disjoint set*/
+		root = disjointSet->find(vertex2Pos[edgeList[id].s]);
+
+		mapIter = root2Comp.find(root);//check which cc the edge belongs to 
+		checkStartT = EMaxIntvl[id].startT;//start time of the edge
+		//startT = infoIter->startT;//start time of the edge
+		label = EMaxIntvl[id].value; //label of the edge
+
+		if (mapIter == root2Comp.end()) {//generateMaxTM case 1
+			newCC = DBG_NEW CComponents(checkStartT, root);
+			//newCC->edges = DBG_NEW vector<TEdge>();
+			newCC->edges.emplace_back(id, label);
+			tempComponentsSize = (int)tempComponents.size();
+			tempComponents.emplace_back(newCC);
+			root2Comp[root] = tempComponentsSize;//update root2Comp
+
+			if (checkStartT == startTime) {//check left unexpandable
+				saveCCPos.emplace_back(tempComponentsSize);
+				hasSaved[tempComponentsSize] = true;
+			}
+
+			realMotifNum++;
+		}
+		else {//generateMaxTM case 2
+			ccPos = mapIter->second;
+			generatedCC = tempComponents[ccPos];
+			generatedCC->edges.emplace_back(id, label);
+			if (generatedCC->startT < checkStartT) {
+				generatedCC->startT = checkStartT;
+			}
+			/* check whether this cc has already been inserted into save list */
+			if (hasSaved.find(ccPos) == hasSaved.end()) {
+				if (generatedCC->startT == startTime) {//check left unexpandable
+					saveCCPos.emplace_back(ccPos);
+					hasSaved[ccPos] = true;
+				}
+			}
+		}
+	}
+}
 
 /*compRES for FTM*/
 void TGraphUEL::computeRES(int intvB, int intvE,
@@ -270,11 +439,11 @@ void TGraphUEL::computeRES(int intvB, int intvE,
 	//int intvStart;
 	//if (maxeL[timePos] < intvLen) return;
 	for (int i = 0; i < nEdge; i++) {
-		if (isEdgeTypeFixed){
+		/*if (isEdgeTypeFixed){
 			edgeType = eW[beginPos][i];
 			if(fixLabel.find(edgeType) == fixLabelEnd) 
 				continue;
-		}
+		}*/
 		
 		if (EMaxIntvl[i].endT >= timePos && EMaxIntvl[i].startT <= beginPos) {//case 4
 			check = EMaxIntvl[i].endT - timePos;
@@ -328,8 +497,8 @@ void TGraphUEL::computeRESForDFTM(int intvB, int intvE,
 	int check;
 	unordered_map<int, bool>::iterator fixLabelEnd = fixLabel.end();
 	int intvLen = intvE - intvB + 1;
-	int lastPos = endT - startT;
-	int /*maxIter=0,*/intvStart;
+	/*int lastPos = endT - startT;
+	int maxIter=0,intvStart;*/
 	//if (maxeL[timePos] < intvLen) return;
 	veciter(TMotif*) iterEnd = result.end();
 	TMotif* tempMotif;
@@ -398,4 +567,116 @@ void TGraphUEL::computeRESForDFTM(int intvB, int intvE,
 		//edgeToMotifId[minEndTEdge] = motifPos;
 		delete tempMotif;
 	}
+}
+
+
+#pragma region key incremental algorithms
+/*DFTM (row number<=T-k+1)*/
+void TGraphUEL::findTMotifsDynamic(int k,
+	vec(TMotif*)*& newResult, int oriEndT,
+	i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber, int TFchoice) {
+#pragma region intialization
+	i2iHMap vertex2Pos;//map the vertex's id to the position in disjoint set
+	/*map the root in disjoint set to the position of its corresponding
+	connected component in the component list*/
+	i2iHMap root2Comp;
+	//edgeToMotifId = DBG_NEW int[nEdge]; //the minimum right endpoint time of the interval of the motif can be expanded, records for each edge
+	edgeToMotifId = DBG_NEW i2iHMap(); //the minimum right endpoint time of the interval of the motif can be expanded, records for each edge
+	//minEndTime = DBG_NEW int[maxMotifNum]; //the minimum right endpoint time of the interval of the motif can be expanded, records for each edge
+	motifSaveInfo = DBG_NEW SaveCCInfo[maxMotifNum]; //the SaveCCInfo of the motif which contains the edge
+
+	//saveMotif = DBG_NEW bool[deltaEndT];//record motifNumSum[T] = motifNum[>T]
+	int lineNum = endT - oriEndT + 1;
+	vec(CComponents*) tempComponents;//temporary component list CC
+	vec(int)* edgeSetsR = DBG_NEW vec(int)[lineNum];// R edge sets
+	DisjointSet* disjointSet;//disjoint set
+
+	veciter(int) iterEnd, iterStart;//iterator for edgeSetsR
+	veciter(CComponents*) listEnd;//iterator for tempComponents
+	int selectedNum;//the number of edges in edgeSetsR
+
+	vec(int) saveMotifPos;//record the position of components which need to be saved
+	/*record the position of components which need to combine with other components*/
+	vec(int) combineMotifPos;
+
+	int vertexNum;//the number of vertexs
+	int realMotifNum;//the number of generated connected component
+	int lastTime = oriEndT - k + 1;//last start time 
+	int edgeEndT;//record the currently considering end time of edges
+	veciter(TMotif*) resultEnd;
+	int pos;
+	int Te, intvE;//temporary end time
+#pragma endregion
+
+	//traverse all possible intervals' start time
+	for (int Ts = startT; Ts <= lastTime; Ts++) {//O(T)
+		selectedNum = 0;
+		Te = Ts + k - 1;
+		intvE = oriEndT;
+		if (TFchoice == 2) {
+			pos = ((Ts - startT) << 1) + 1;
+		}
+		else {
+			pos = resultPos(Ts, intvE, startT, endT, k);
+		}
+		computeRESForDFTM(Ts, intvE,
+			edgeSetsR, selectedNum,
+			fixLabel, isEdgeTypeFixed, k,
+			newResult, pos);//O(E)
+		newResult[pos].clear();
+
+		//initalize for every row
+		disjointSet = DBG_NEW DisjointSet
+		((int)((selectedNum << 1) + 1));
+		root2Comp.clear();
+		vertex2Pos.clear();
+		vertexNum = 0;
+		realMotifNum = 0;
+		edgeEndT = endT;
+
+		//R2L
+		int startPos = endT - oriEndT;
+		for (int tempT = startPos; tempT >= 0; tempT--, edgeEndT--) {//O(Es)
+			//if (tempT >= maxIntervalLength) continue;
+			iterStart = edgeSetsR[tempT].begin();
+			iterEnd = edgeSetsR[tempT].end();
+			if (iterStart == iterEnd) continue;
+			//generateMaxTM and generatedExpTM
+			genMotifInOneIntvDynamic(iterStart, iterEnd,
+				vertex2Pos, disjointSet, vertexNum,
+				combineMotifPos, realMotifNum, root2Comp, tempComponents,
+				saveMotifPos, Ts, edgeEndT,
+				newResult, k, motifNumber, TFchoice);
+			edgeSetsR[tempT].clear();
+		}
+
+		//testing
+		Test::updateMemoryUse();
+		//Test::showMemoryUse();
+
+		//release
+		delete disjointSet;
+		listEnd = tempComponents.end();
+		for (auto listIter = tempComponents.begin();
+			listIter != listEnd; ++listIter) {
+			if (*listIter != NULL)
+				delete *listIter;
+		}
+		tempComponents.clear();
+	}
+	delete[] edgeSetsR;
+	//delete[] minEndTime;
+	delete edgeToMotifId;
+	delete[] motifSaveInfo;
+}
+#pragma endregion
+
+void TGraphUEL::runDFTM(int k, vec(TMotif*)*& newResult, int oriEndT, i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber, int TFchoice) {
+	//row number<=T-k+1
+	findTMotifsDynamic(k, newResult,
+		oriEndT, fixLabel, isEdgeTypeFixed, motifNumber, TFchoice);
+	//row number>T-k+1  similar to FTM
+	findTMotifs(k, newResult,
+		fixLabel, isEdgeTypeFixed, motifNumber,
+		oriEndT - k + 2, endT, TFchoice);
 }

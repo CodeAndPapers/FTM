@@ -122,21 +122,6 @@ using i2iHMap_Iter = unordered_map<int, int>::iterator;
 #pragma endregion
 
 //information saved for R edge sets and EMaxIntvl
-struct SaveInfoNoStruct {
-	int edgeId; //edge in R edge sets
-	int startT; //interval for EMaxIntvl[e], only need to save the starting timestamp
-	Label label; //label of e in interval
-	SaveInfoNoStruct(int id, int start, Label w) {
-		edgeId = id;
-		startT = start;
-		label = w;
-	}
-};
-using SAVEINFONOST = SaveInfoNoStruct;
-using SAVEINFONOST_Vec = vec(SAVEINFONOST);
-using SAVEINFONOST_VIter = veciter(SAVEINFONOST);
-
-//information saved for R edge sets and EMaxIntvl
 struct SaveInfo {
 	int edgeId; //edge in R edge sets
 	//int startT; //interval for EMaxIntvl[e], only need to save the starting timestamp

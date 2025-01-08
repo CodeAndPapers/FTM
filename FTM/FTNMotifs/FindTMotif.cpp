@@ -85,14 +85,6 @@ void FindTMotif::DFTM(TGraph*& graph,
 	delete[] result;
 	#pragma endregion
 	if (oriEndT == endT)return;
-	#pragma region update result
-		//row number<=T-k+1
-		graph->findTMotifsDynamic(k, newResult,
-			oriEndT, fixLabel, isEdgeTypeFixed, FindTMotif::motifNumber, FindTMotif::TFchoice);
-		//row number>T-k+1  similar to FTM
-		graph->findTMotifs(k, newResult,
-			fixLabel, isEdgeTypeFixed, FindTMotif::motifNumber,
-			oriEndT - k + 2, endT, FindTMotif::TFchoice);
-	#pragma endregion
+	graph->runDFTM(k, newResult, oriEndT, fixLabel, isEdgeTypeFixed, FindTMotif::motifNumber, FindTMotif::TFchoice);
 }
 #pragma endregion 

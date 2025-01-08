@@ -49,6 +49,18 @@ public:
 	void findTMotifs(int k, vec(TMotif*)*& result,
 		i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber,
 		int choiceStartT, int choiceEndT, int TFchoice);
+
+	void updateNewEdgeInfo(
+		veciter(int)& infoBegin, veciter(int)& infoEnd,
+		vec(CComponents*)& tempComponents,
+		i2iHMap& vertex2Pos, DisjointSet*& disjointSet,
+		i2iHMap& root2Comp, /*int& tempComponentsSize,*/ int& realMotifNum,
+		vec(int)& saveCCPos, int startTime);
+	/*DFTM (row number<=T-k+1)*/
+	void findTMotifsDynamic(int k, vec(TMotif*)*& newResult, int oriEndT,
+		i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber, int TFchoice);
+
+	void runDFTM(int k, vec(TMotif*)*& newResult, int oriEndT, i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber, int TFchoice);
 private:
 	/*
 	create the eL table and IC trees
@@ -76,6 +88,7 @@ private:
 	Label getWeight(int time, int edgeId);
 
 	#pragma region auxiliary structure 
+	Intv *EMaxIntvl;
 	ICTree** tree;// trees for every edge
 	#pragma endregion
 	

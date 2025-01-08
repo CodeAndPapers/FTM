@@ -47,6 +47,21 @@ public:
 	void changeGraph(const char* src, int oldEndT, int limitNewEndT);
 	#pragma endregion
 
+	void findTMotifs(int k, vec(TMotif*)*& result,
+		i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber,
+		int choiceStartT, int choiceEndT, int TFchoice);
+
+	void updateNewEdgeInfo(
+		veciter(int)& infoBegin, veciter(int)& infoEnd,
+		vec(CComponents*)& tempComponents,
+		i2iHMap& vertex2Pos, DisjointSet*& disjointSet,
+		i2iHMap& root2Comp, /*int& tempComponentsSize,*/ int& realMotifNum,
+		vec(int)& saveCCPos, int startTime);
+	/*DFTM (row number<=T-k+1)*/
+	void findTMotifsDynamic(int k, vec(TMotif*)*& newResult, int oriEndT,
+		i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber, int TFchoice);
+
+	void runDFTM(int k, vec(TMotif*)*& newResult, int oriEndT, i2bHMap& fixLabel, bool isEdgeTypeFixed, long long& motifNumber, int TFchoice);
 private:
 	/*
 	create the eL table and IC trees
@@ -58,6 +73,7 @@ private:
 	void createStructure(vec(int)& u_arr, vec(int)& v_arr,
 		vec(int)& t_arr, vec(Label)& w_arr/*,
 		unordered_map<int, int>* &name2id*/);
+	
 	
 	/*computeRES for FTM*/
 	void computeRES(int intvB, int intvE,
@@ -75,15 +91,12 @@ private:
 		unordered_map<Label, bool>& fixLabel,
 		bool isEdgeTypeFixed, int k, vec(TMotif*)*& result, int pos);
 
-	/*void computeRESForDFTM(int choiceStartT, int oriEndT, int choiceEndT, int*& scanP,
-		SAVEINFO_Vec*& edgeSetsR,
-		unordered_map<Label, bool>& fixLabel,
-		bool isEdgeTypeFixed, int k, vec(TMotif*)*& result);*/
-
+	
 	/*get the label of edge with edgeId at the time*/
 	Label getWeight(int time, int edgeId);
 
 	#pragma region structure 
+		Intv *EMaxIntvl;
 		#pragma region EL table
 			int **eL;// len_t:the times of edges keeping their label fixed O(TE)
 			Label** eW; // lab_t:temporal graph label   eW[t][edgeId] O(TE)
